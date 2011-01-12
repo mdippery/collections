@@ -11,7 +11,7 @@
 		B76C5D0A12DE0F250058DF08 /* NSArray+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B76C5D0812DE0F250058DF08 /* NSArray+Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B76C5D0B12DE0F250058DF08 /* NSArray+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArray+Collections.m */; };
 		B76C5DAA12DE1F6C0058DF08 /* TestCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5DA912DE1F6C0058DF08 /* TestCollections.m */; };
-		B76C5E5C12DE21D10058DF08 /* libcollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libcollections.dylib */; };
+		B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,7 @@
 		B76C5D6B12DE1E1B0058DF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		B76C5DA812DE1F6C0058DF08 /* TestCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollections.h; path = Tests/TestCollections.h; sourceTree = "<group>"; };
 		B76C5DA912DE1F6C0058DF08 /* TestCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollections.m; path = Tests/TestCollections.m; sourceTree = "<group>"; };
-		D2AAC0C705546C1D00DB518D /* libcollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libcollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC0C705546C1D00DB518D /* libCollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76C5E5C12DE21D10058DF08 /* libcollections.dylib in Frameworks */,
+				B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC0C705546C1D00DB518D /* libcollections.dylib */,
+				D2AAC0C705546C1D00DB518D /* libCollections.dylib */,
 				B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */,
 			);
 			name = Products;
@@ -145,9 +145,9 @@
 			productReference = B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		D2AAC0C605546C1D00DB518D /* collections */ = {
+		D2AAC0C605546C1D00DB518D /* Collections */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "collections" */;
+			buildConfigurationList = 1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "Collections" */;
 			buildPhases = (
 				D2AAC0C305546C1D00DB518D /* Headers */,
 				D2AAC0C405546C1D00DB518D /* Sources */,
@@ -157,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = collections;
+			name = Collections;
 			productName = collections;
-			productReference = D2AAC0C705546C1D00DB518D /* libcollections.dylib */;
+			productReference = D2AAC0C705546C1D00DB518D /* libCollections.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC0C605546C1D00DB518D /* collections */,
+				D2AAC0C605546C1D00DB518D /* Collections */,
 				B76C5D6912DE1E1B0058DF08 /* Unit Tests */,
 			);
 		};
@@ -236,7 +236,7 @@
 /* Begin PBXTargetDependency section */
 		B76C5DA012DE1F370058DF08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2AAC0C605546C1D00DB518D /* collections */;
+			target = D2AAC0C605546C1D00DB518D /* Collections */;
 			targetProxy = B76C5D9F12DE1F370058DF08 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -259,7 +259,7 @@
 				GCC_PREFIX_HEADER = Source/collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = collections;
+				PRODUCT_NAME = Collections;
 			};
 			name = Debug;
 		};
@@ -277,7 +277,7 @@
 				GCC_PREFIX_HEADER = Source/collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
-				PRODUCT_NAME = collections;
+				PRODUCT_NAME = Collections;
 			};
 			name = Release;
 		};
@@ -368,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "collections" */ = {
+		1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "Collections" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB917E08733D990010E9CD /* Debug */,
