@@ -17,7 +17,7 @@
     return [self detect:block ifNone:^ id { return nil; }];
 }
 
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)())none
+- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none
 {
     for (id item in self) {
         if (block(item)) return item;
@@ -105,23 +105,18 @@
 
 - (NSArray *)dropWhile:(BOOL (^)(id obj))block
 {
-    NSMutableArray *a = [self mutableCopy];
-    for (id item in self) {
-        if (!block(item)) {
-            return [[a copy] autorelease];
-        } else {
-            [a removeObject:item];
-        }
-    }
-    return [[a copy] autorelease];
-}
+    NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]/2];
+    NSUInteger cur = 0U;
 
-- (NSArray *)first:(NSUInteger)n
-{
-    NSMutableArray *a = [NSMutableArray arrayWithCapacity:n];
-    for (NSUInteger i = 0U; i < n; i++) {
-        [a addObject:[self objectAtIndex:i]];
+    for (cur = 0U; cur < [self count]; cur++) {
+        id item = [self objectAtIndex:cur];
+        if (!block(item)) break;
     }
+
+    for (; cur < [self count]; cur++) {
+        [a addObject:[self objectAtIndex:cur]];
+    }
+
     return [[a copy] autorelease];
 }
 
@@ -167,7 +162,7 @@
 - (NSArray *)take:(NSUInteger)n
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:n];
-    for (NSUInteger i = 0; i < n; i++) {
+    for (NSUInteger i = 0U; i < n; i++) {
         [a addObject:[self objectAtIndex:i]];
     }
     return [[a copy] autorelease];
