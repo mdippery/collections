@@ -1,7 +1,7 @@
 #import "NSArray+Collections.h"
 
 
-@implementation NSArray (Collections)
+@implementation NSArray (SmalltalkCollections)
 
 - (NSArray *)collect:(id (^)(id obj))block
 {
@@ -53,6 +53,25 @@
         }
     }
     return [[a copy] autorelease];
+}
+
+@end
+
+@implementation NSArray (RubyEnumerable)
+
+- (id)_valueOf:(NSComparisonResult (^)(id left, id right))block comparingTo:(NSComparisonResult)compare
+{
+    if ([self count] == 0) return nil;
+
+    id cur = [self objectAtIndex:0];
+    for (NSUInteger i = 1U; i < [self count]; i++) {
+        id item = [self objectAtIndex:i];
+        NSComparisonResult result = block(cur, item);
+        if (result == compare) {
+            cur = item;
+        }
+    }
+    return cur;
 }
 
 - (BOOL)all:(BOOL (^)(id obj))block
@@ -118,21 +137,6 @@
     }
 
     return [[a copy] autorelease];
-}
-
-- (id)_valueOf:(NSComparisonResult (^)(id left, id right))block comparingTo:(NSComparisonResult)compare
-{
-    if ([self count] == 0) return nil;
-
-    id cur = [self objectAtIndex:0];
-    for (NSUInteger i = 1U; i < [self count]; i++) {
-        id item = [self objectAtIndex:i];
-        NSComparisonResult result = block(cur, item);
-        if (result == compare) {
-            cur = item;
-        }
-    }
-    return cur;
 }
 
 - (id)max:(NSComparisonResult (^)(id left, id right))block
