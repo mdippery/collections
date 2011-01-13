@@ -2,7 +2,7 @@
 
 **libCollections** is an Objective-C library that brings methods from
 Smalltalk's [collection protocol][Smalltalk] and Ruby's
-[`Enumerable` class][Ruby] to Objective-C projects. **libCollections** adds
+[`Enumerable`][Ruby] mixin to Objective-C projects. **libCollections** adds
 these methods as categories to the Foundation framework's collections classes.
 Currently only `NSArray` is modified, and not all of Ruby's `Enumerable`
 methods are implemented. (Some of them aren't really relevant or useful and
