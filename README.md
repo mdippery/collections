@@ -8,11 +8,15 @@ Currently only `NSArray` is modified, and not all of Ruby's `Enumerable`
 methods are implemented. (Some of them aren't really relevant or useful and
 probably won't be.)
 
-## Requirements
+## What does it run on?
 
 **libCollections** uses C blocks extensively. Right now it's only designed to
 compile on Mac OS X 10.6; it can probably compile on 10.5 as well, but I
-haven't set that up yet.
+haven't set that up yet. Currently it compiles as a dynamic library on OS X
+only; I'd like to add support for building as a static library for iOS, but
+I don't have an iOS developer's account and don't really write iPhone
+software. However, the code isn't terribly complicated, so adding iOS
+support should be trivial.
 
 ## Who created this?
 
