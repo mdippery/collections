@@ -19,6 +19,17 @@
     }
 }
 
+- (void)testDo
+{
+    __block BOOL ranFirstBlock = NO;
+    __block BOOL ranSecondBlock = NO;
+    NSArray *a = [NSArray arrayWithObjects:@"one", @"two", @"buckle", @"my", @"shoe", nil];
+    NSArray *ret = [[a do:^ (id obj) { ranFirstBlock = YES; }] do:^ (id obj) { ranSecondBlock = YES; }];
+    STAssertEquals(a, ret, @"'a' and 'ret' are not the same object");
+    STAssertTrue(ranFirstBlock, @"Did not run first code block");
+    STAssertTrue(ranSecondBlock, @"Did not run second code block");
+}
+
 - (void)testCollect
 {
     NSNumber *one = [NSNumber numberWithInteger:1];

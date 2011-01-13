@@ -25,6 +25,12 @@
 
 @implementation NSArray (SmalltalkCollections)
 
+- (NSArray *)do:(void (^)(id obj))block
+{
+    [self enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL *stop) { block(obj); }];
+    return self;
+}
+
 - (NSArray *)collect:(id (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]];

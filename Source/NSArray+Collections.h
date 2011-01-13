@@ -24,6 +24,7 @@
 
 
 @interface NSArray (SmalltalkCollections)
+- (NSArray *)do:(void (^)(id obj))block;
 - (NSArray *)collect:(id (^)(id obj))block;
 - (id)detect:(BOOL (^)(id obj))block;
 - (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none;
