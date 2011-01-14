@@ -42,7 +42,7 @@
 
 - (id)detect:(BOOL (^)(id obj))block
 {
-    return [self detect:block ifNone:^ id { return nil; }];
+    return [self detect:block ifNone:^ id (void) { return nil; }];
 }
 
 - (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none
