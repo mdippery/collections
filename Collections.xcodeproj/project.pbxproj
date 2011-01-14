@@ -259,7 +259,9 @@
 				GCC_PREFIX_HEADER = Source/collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
+				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = Collections;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
 			};
 			name = Debug;
 		};
@@ -277,7 +279,9 @@
 				GCC_PREFIX_HEADER = Source/collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
+				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = Collections;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
 			};
 			name = Release;
 		};
