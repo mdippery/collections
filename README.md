@@ -18,6 +18,23 @@ I don't have an iOS developer's account and don't really write iPhone
 software. However, the code isn't terribly complicated, so adding iOS
 support should be trivial.
 
+## Can I use it now?
+
+Meh. Most of the planned functionality is implemented for `NSArray`, but it
+hasn't been extensively tested (to be honest, the unit tests are kind of
+pathetic), nor has the code been written as "tightly" or efficiently as it
+could be. I also haven't tried it on iOS yet, so if you're developing for the
+iPhone, you might be out of luck. This is an early in-development version at
+the moment, so use at your own risk.
+
+## Can you make it work on the iPhone?
+
+I'm working on iOS support. I'm a Mac developer, not an iPhone developer,
+so I don't have one of those newfangled gotta-pay-a-fee iPhone developer's
+accounts yet. That said, **libCollections** only uses Foundation classes, so
+compiling it as an iOS-compatible static library shouldn't be terribly
+difficult.
+
 ## Who created this?
 
 **libCollections** is written by Michael Dippery. I had been meaning to create
