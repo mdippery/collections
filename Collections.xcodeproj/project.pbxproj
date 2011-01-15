@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B76C5CEE12DE0BFA0058DF08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
-		B76C5D0A12DE0F250058DF08 /* NSArray+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B76C5D0812DE0F250058DF08 /* NSArray+Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B76C5D0B12DE0F250058DF08 /* NSArray+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArray+Collections.m */; };
+		B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */; };
 		B76C5DAA12DE1F6C0058DF08 /* TestCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5DA912DE1F6C0058DF08 /* TestCollections.m */; };
 		B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
 /* End PBXBuildFile section */
@@ -27,8 +27,8 @@
 /* Begin PBXFileReference section */
 		32DBCF5E0370ADEE00C91783 /* collections.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collections.pch; path = Source/collections.pch; sourceTree = "<group>"; };
 		B76C5CED12DE0BFA0058DF08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B76C5D0812DE0F250058DF08 /* NSArray+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Collections.h"; path = "Source/NSArray+Collections.h"; sourceTree = "<group>"; };
-		B76C5D0912DE0F250058DF08 /* NSArray+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Collections.m"; path = "Source/NSArray+Collections.m"; sourceTree = "<group>"; };
+		B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayCollections.h; path = Source/NSArrayCollections.h; sourceTree = "<group>"; };
+		B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayCollections.m; path = Source/NSArrayCollections.m; sourceTree = "<group>"; };
 		B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76C5D6B12DE1E1B0058DF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		B76C5DA812DE1F6C0058DF08 /* TestCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollections.h; path = Tests/TestCollections.h; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B76C5D0812DE0F250058DF08 /* NSArray+Collections.h */,
-				B76C5D0912DE0F250058DF08 /* NSArray+Collections.m */,
+				B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */,
+				B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76C5D0A12DE0F250058DF08 /* NSArray+Collections.h in Headers */,
+				B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76C5D0B12DE0F250058DF08 /* NSArray+Collections.m in Sources */,
+				B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

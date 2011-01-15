@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import "NSArray+Collections.h"
+#import "NSArrayCollections.h"
 
 
 @implementation NSArray (SmalltalkCollections)

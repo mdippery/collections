@@ -1,5 +1,5 @@
 #import "TestCollections.h"
-#import "NSArray+Collections.h"
+#import "NSArrayCollections.h"
 
 
 @implementation TestCollections
