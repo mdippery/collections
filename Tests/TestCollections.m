@@ -61,7 +61,7 @@
     STAssertEquals([two integerValue], (NSInteger) 2, @"Found value was not 2");
     STAssertEqualObjects(two, detected, @"Found object is not the same as the one put into the array");
 
-    id failed = [a detect:^ BOOL (id obj) { return [obj integerValue] >= 10; } ifNone:^ id { return [NSNumber numberWithInteger:100]; }];
+    id failed = [a detect:^ BOOL (id obj) { return [obj integerValue] >= 10; } ifNone:^ id (void) { return [NSNumber numberWithInteger:100]; }];
     STAssertEquals([failed integerValue], (NSInteger) 100, @"Failed value is not 100");
     STAssertFalse([a containsObject:failed], @"array contains the failed object, but did not find it");
 }
