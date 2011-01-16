@@ -10,11 +10,10 @@ probably won't be.)
 
 ## What does it run on?
 
-**libCollections** uses C blocks extensively. Right now it's only designed to
-compile on Mac OS X 10.6; it can probably compile on 10.5 as well, but I
-haven't set that up yet. Currently it compiles as a dynamic library on OS X
-only; I'd like to add support for building as a static library for iOS, but
-I don't have an iOS developer's account and don't really write iPhone
+**libCollections** uses C blocks extensively. I've only tested it on 10.6, but
+it should work on 10.5 as well. Currently it compiles as a dynamic library on
+OS X only; I'd like to add support for building as a static library for iOS,
+but I don't have an iOS developer's account and don't really write iPhone
 software. However, the code isn't terribly complicated, so adding iOS
 support should be trivial.
 
@@ -23,9 +22,8 @@ support should be trivial.
 Meh. Most of the planned functionality is implemented for `NSArray`, but it
 hasn't been extensively tested (to be honest, the unit tests are kind of
 pathetic), nor has the code been written as "tightly" or efficiently as it
-could be. I also haven't tried it on iOS yet, so if you're developing for the
-iPhone, you might be out of luck. This is an early in-development version at
-the moment, so use at your own risk.
+could be. This is an early in-development version at the moment, so use at
+your own risk.
 
 ## Can you make it work on the iPhone?
 
