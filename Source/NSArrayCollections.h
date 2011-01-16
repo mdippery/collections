@@ -40,8 +40,8 @@
 - (BOOL)one:(BOOL (^)(id obj))block;
 - (NSArray *)drop:(NSUInteger)n;
 - (NSArray *)dropWhile:(BOOL (^)(id obj))block;
-- (id)max:(NSComparisonResult (^)(id left, id right))block;
-- (id)min:(NSComparisonResult (^)(id left, id right))block;
+- (id)max:(NSComparator)block;
+- (id)min:(NSComparator)block;
 - (NSArray *)partition:(BOOL (^)(id obj))block;
 - (NSArray *)take:(NSUInteger)n;
 - (NSArray *)takeWhile:(BOOL (^)(id obj))block;

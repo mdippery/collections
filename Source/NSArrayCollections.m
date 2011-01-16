@@ -21,6 +21,7 @@
  */
 
 #import "NSArrayCollections.h"
+#import "Common.h"
 
 
 @implementation NSArray (SmalltalkCollections)
@@ -32,9 +33,7 @@
         [self enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL *stop) { block(obj); }];
     } else {
         NSLog(@"enumerateObjectsUsingBlock: does not exist");
-        for (id item in self) {
-            block(item);
-        }
+        do_foreach(self, block);
     }
     return self;
 }
@@ -42,111 +41,58 @@
 - (NSArray *)collect:(id (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]];
-    for (id item in self) {
-        [a addObject:block(item)];
-    }
-    return [[a copy] autorelease];
+    return collect_foreach(self, a, block);
 }
 
 - (id)detect:(BOOL (^)(id obj))block
 {
-    return [self detect:block ifNone:^ id (void) { return nil; }];
+    return default_detect(self, block);
 }
 
 - (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none
 {
-    for (id item in self) {
-        if (block(item)) return item;
-    }
-    return none();
+    return detect_foreach(self, block, none);
 }
 
 - (id)inject:(id)initial into:(id (^)(id memo, id obj))block
 {
-    for (id item in self) {
-        initial = block(initial, item);
-    }
-    return initial;
+    return inject_foreach(self, initial, block);
 }
 
 - (NSArray *)reject:(BOOL (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]];
-    for (id item in self) {
-        if (!block(item)) {
-            [a addObject:item];
-        }
-    }
-    return [[a copy] autorelease];
+    return reject_foreach(self, a, block);
 }
 
 - (NSArray *)select:(BOOL (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]];
-    for (id item in self) {
-        if (block(item)) {
-            [a addObject:item];
-        }
-    }
-    return [[a copy] autorelease];
+    return select_foreach(self, a, block);
 }
 
 @end
 
 @implementation NSArray (RubyEnumerable)
 
-- (id)_valueOf:(NSComparisonResult (^)(id left, id right))block comparingTo:(NSComparisonResult)compare
-{
-    if ([self count] == 0) return nil;
-
-    id cur = [self objectAtIndex:0];
-    for (NSUInteger i = 1U; i < [self count]; i++) {
-        id item = [self objectAtIndex:i];
-        NSComparisonResult result = block(cur, item);
-        if (result == compare) {
-            cur = item;
-        }
-    }
-    return cur;
-}
-
 - (BOOL)all:(BOOL (^)(id obj))block
 {
-    for (id item in self) {
-        if (!block(item)) return NO;
-    }
-    return YES;
+    return all_foreach(self, block);
 }
 
 - (BOOL)any:(BOOL (^)(id obj))block
 {
-    for (id item in self) {
-        if (block(item)) return YES;
-    }
-    return NO;
+    return any_foreach(self, block);
 }
 
 - (BOOL)none:(BOOL (^)(id obj))block
 {
-    for (id item in self) {
-        if (block(item)) return NO;
-    }
-    return YES;
+    return none_foreach(self, block);
 }
 
 - (BOOL)one:(BOOL (^)(id obj))block
 {
-    BOOL sawOne = NO;
-    for (id item in self) {
-        if (block(item)) {
-            if (sawOne) {
-                return NO;
-            } else {
-                sawOne = YES;
-            }
-        }
-    }
-    return sawOne;
+    return one_foreach(self, block);
 }
 
 - (NSArray *)drop:(NSUInteger)n
@@ -161,42 +107,24 @@
 - (NSArray *)dropWhile:(BOOL (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]/2];
-    NSUInteger cur = 0U;
-
-    for (cur = 0U; cur < [self count]; cur++) {
-        id item = [self objectAtIndex:cur];
-        if (!block(item)) break;
-    }
-
-    for (; cur < [self count]; cur++) {
-        [a addObject:[self objectAtIndex:cur]];
-    }
-
-    return [[a copy] autorelease];
+    return drop_foreach(self, a, block);
 }
 
-- (id)max:(NSComparisonResult (^)(id left, id right))block
+- (id)max:(NSComparator)block
 {
-    return [self _valueOf:block comparingTo:NSOrderedAscending];
+    return find_max(self, block);
 }
 
-- (id)min:(NSComparisonResult (^)(id left, id right))block
+- (id)min:(NSComparator)block
 {
-    return [self _valueOf:block comparingTo:NSOrderedDescending];
+    return find_min(self, block);
 }
 
 - (NSArray *)partition:(BOOL (^)(id obj))block
 {
     NSMutableArray *trueVals = [NSMutableArray arrayWithCapacity:[self count]/2];
     NSMutableArray *falseVals = [NSMutableArray arrayWithCapacity:[self count]/2];
-    for (id item in self) {
-        if (block(item)) {
-            [trueVals addObject:item];
-        } else {
-            [falseVals addObject:item];
-        }
-    }
-    return [NSArray arrayWithObjects:[[trueVals copy] autorelease], [[falseVals copy] autorelease], nil];
+    return partition_foreach(self, trueVals, falseVals, block);
 }
 
 - (NSArray *)take:(NSUInteger)n
@@ -211,14 +139,7 @@
 - (NSArray *)takeWhile:(BOOL (^)(id obj))block
 {
     NSMutableArray *a = [NSMutableArray arrayWithCapacity:[self count]];
-    for (id item in self) {
-        if (!block(item)) {
-            return [[a copy] autorelease];
-        } else {
-            [a addObject:item];
-        }
-    }
-    return [[a copy] autorelease];
+    return take_foreach(self, a, block);
 }
 
 @end

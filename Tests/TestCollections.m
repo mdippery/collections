@@ -176,16 +176,24 @@
 
 - (void)testMax
 {
+    NSComparisonResult (^cmp)(id, id) = ^ NSComparisonResult (id left, id right) { return [left compare:right]; };
     NSArray *a = [NSArray arrayWithObjects:@"foo", @"bar", @"max", @"baz", nil];
-    id max = [a max:^ NSComparisonResult (id left, id right) { return [left compare:right]; }];
+    id max = [a max:cmp];
     STAssertEqualObjects(max, @"max", @"maximum value was not 'max' (was '%@')", max);
+    NSArray *empty = [NSArray array];
+    id emptyMax = [empty max:cmp];
+    STAssertEqualObjects(emptyMax, nil, @"Empty arrays should return 'nil' for max");
 }
 
 - (void)testMin
 {
-    NSArray *a = [NSArray arrayWithObjects:@"foo", @"bar", @"max", @"baz", nil];
-    id min = [a min:^ NSComparisonResult (id left, id right) { return [left compare:right]; }];
+    NSComparisonResult (^cmp)(id, id) = ^ NSComparisonResult (id left, id right) { return [left compare:right]; };
+    NSArray *a = [NSArray arrayWithObjects:@"foo", @"bar", @"max", @"baz", @"something else", nil];
+    id min = [a min:cmp];
     STAssertEqualObjects(min, @"bar", @"minimum value was not 'bar' (was '%@')", min);
+    NSArray *empty = [NSArray array];
+    id emptyMin = [empty min:cmp];
+    STAssertEqualObjects(emptyMin, nil, @"Empty arrays should return 'nil' for min");
 }
 
 - (void)testPartition

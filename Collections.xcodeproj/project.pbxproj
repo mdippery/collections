@@ -12,6 +12,8 @@
 		B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */; };
 		B76C5DAA12DE1F6C0058DF08 /* TestCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5DA912DE1F6C0058DF08 /* TestCollections.m */; };
 		B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
+		B77EEBF012E3907B00567D8C /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B77EEBEE12E3907B00567D8C /* Common.h */; };
+		B77EEBF112E3907B00567D8C /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B77EEBEF12E3907B00567D8C /* Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		B76C5D6B12DE1E1B0058DF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		B76C5DA812DE1F6C0058DF08 /* TestCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollections.h; path = Tests/TestCollections.h; sourceTree = "<group>"; };
 		B76C5DA912DE1F6C0058DF08 /* TestCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollections.m; path = Tests/TestCollections.m; sourceTree = "<group>"; };
+		B77EEBEE12E3907B00567D8C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Source/Common.h; sourceTree = "<group>"; };
+		B77EEBEF12E3907B00567D8C /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
 		D2AAC0C705546C1D00DB518D /* libCollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +84,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B77EEBEE12E3907B00567D8C /* Common.h */,
+				B77EEBEF12E3907B00567D8C /* Common.m */,
 				B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */,
 				B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */,
 			);
@@ -120,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */,
+				B77EEBF012E3907B00567D8C /* Common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */,
+				B77EEBF112E3907B00567D8C /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
