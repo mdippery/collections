@@ -10,7 +10,7 @@
 		B76C5CEE12DE0BFA0058DF08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
 		B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */; };
-		B76C5DAA12DE1F6C0058DF08 /* TestCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5DA912DE1F6C0058DF08 /* TestCollections.m */; };
+		B76C5DAA12DE1F6C0058DF08 /* TestArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5DA912DE1F6C0058DF08 /* TestArrayCollections.m */; };
 		B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
 		B77EEBF012E3907B00567D8C /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B77EEBEE12E3907B00567D8C /* Common.h */; };
 		B77EEBF112E3907B00567D8C /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B77EEBEF12E3907B00567D8C /* Common.m */; };
@@ -21,6 +21,7 @@
 		B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C18A12E3FA0100CADC97 /* MDPair.m */; };
 		B7A1C1F812E3FFE300CADC97 /* NSSetCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A1C1F612E3FFE300CADC97 /* NSSetCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7A1C1F912E3FFE300CADC97 /* NSSetCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C1F712E3FFE300CADC97 /* NSSetCollections.m */; };
+		B7A1C2CD12E407ED00CADC97 /* TestSetCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,8 @@
 		B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayCollections.m; path = Source/NSArrayCollections.m; sourceTree = "<group>"; };
 		B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76C5D6B12DE1E1B0058DF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		B76C5DA812DE1F6C0058DF08 /* TestCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestCollections.h; path = Tests/TestCollections.h; sourceTree = "<group>"; };
-		B76C5DA912DE1F6C0058DF08 /* TestCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollections.m; path = Tests/TestCollections.m; sourceTree = "<group>"; };
+		B76C5DA812DE1F6C0058DF08 /* TestArrayCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestArrayCollections.h; path = Tests/TestArrayCollections.h; sourceTree = "<group>"; };
+		B76C5DA912DE1F6C0058DF08 /* TestArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestArrayCollections.m; path = Tests/TestArrayCollections.m; sourceTree = "<group>"; };
 		B77EEBEE12E3907B00567D8C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Source/Common.h; sourceTree = "<group>"; };
 		B77EEBEF12E3907B00567D8C /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
 		B7A1C10612E3F24F00CADC97 /* debug-driver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "debug-driver"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +58,8 @@
 		B7A1C18A12E3FA0100CADC97 /* MDPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPair.m; path = Source/MDPair.m; sourceTree = "<group>"; };
 		B7A1C1F612E3FFE300CADC97 /* NSSetCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSSetCollections.h; path = Source/NSSetCollections.h; sourceTree = "<group>"; };
 		B7A1C1F712E3FFE300CADC97 /* NSSetCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSSetCollections.m; path = Source/NSSetCollections.m; sourceTree = "<group>"; };
+		B7A1C2CB12E407ED00CADC97 /* TestSetCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSetCollections.h; path = Tests/TestSetCollections.h; sourceTree = "<group>"; };
+		B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestSetCollections.m; path = Tests/TestSetCollections.m; sourceTree = "<group>"; };
 		D2AAC0C705546C1D00DB518D /* libCollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,8 +148,10 @@
 		B76C5D6F12DE1E3C0058DF08 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B76C5DA812DE1F6C0058DF08 /* TestCollections.h */,
-				B76C5DA912DE1F6C0058DF08 /* TestCollections.m */,
+				B76C5DA812DE1F6C0058DF08 /* TestArrayCollections.h */,
+				B76C5DA912DE1F6C0058DF08 /* TestArrayCollections.m */,
+				B7A1C2CB12E407ED00CADC97 /* TestSetCollections.h */,
+				B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */,
 				B76C5D6B12DE1E1B0058DF08 /* Info.plist */,
 				B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */,
 			);
@@ -281,7 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76C5DAA12DE1F6C0058DF08 /* TestCollections.m in Sources */,
+				B76C5DAA12DE1F6C0058DF08 /* TestArrayCollections.m in Sources */,
+				B7A1C2CD12E407ED00CADC97 /* TestSetCollections.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
