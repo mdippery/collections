@@ -14,6 +14,9 @@
 		B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
 		B77EEBF012E3907B00567D8C /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B77EEBEE12E3907B00567D8C /* Common.h */; };
 		B77EEBF112E3907B00567D8C /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B77EEBEF12E3907B00567D8C /* Common.m */; };
+		B7A1C10B12E3F28E00CADC97 /* DebugDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */; };
+		B7A1C10F12E3F29D00CADC97 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
+		B7A1C11012E3F2A700CADC97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +26,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2AAC0C605546C1D00DB518D;
 			remoteInfo = collections;
+		};
+		B7A1C10D12E3F29A00CADC97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC0C605546C1D00DB518D /* Collections */;
+			remoteInfo = Collections;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -37,6 +47,8 @@
 		B76C5DA912DE1F6C0058DF08 /* TestCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCollections.m; path = Tests/TestCollections.m; sourceTree = "<group>"; };
 		B77EEBEE12E3907B00567D8C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Source/Common.h; sourceTree = "<group>"; };
 		B77EEBEF12E3907B00567D8C /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
+		B7A1C10612E3F24F00CADC97 /* debug-driver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "debug-driver"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugDriver.m; path = Tests/DebugDriver.m; sourceTree = "<group>"; };
 		D2AAC0C705546C1D00DB518D /* libCollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,6 +58,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76C5E5C12DE21D10058DF08 /* libCollections.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7A1C10412E3F24F00CADC97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7A1C10F12E3F29D00CADC97 /* libCollections.dylib in Frameworks */,
+				B7A1C11012E3F2A700CADC97 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +86,7 @@
 			children = (
 				D2AAC0C705546C1D00DB518D /* libCollections.dylib */,
 				B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */,
+				B7A1C10612E3F24F00CADC97 /* debug-driver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +136,7 @@
 				B76C5DA812DE1F6C0058DF08 /* TestCollections.h */,
 				B76C5DA912DE1F6C0058DF08 /* TestCollections.m */,
 				B76C5D6B12DE1E1B0058DF08 /* Info.plist */,
+				B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -151,6 +174,23 @@
 			productName = "Unit Tests";
 			productReference = B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		B7A1C10512E3F24F00CADC97 /* Debug Driver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7A1C10C12E3F28F00CADC97 /* Build configuration list for PBXNativeTarget "Debug Driver" */;
+			buildPhases = (
+				B7A1C10312E3F24F00CADC97 /* Sources */,
+				B7A1C10412E3F24F00CADC97 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7A1C10E12E3F29A00CADC97 /* PBXTargetDependency */,
+			);
+			name = "Debug Driver";
+			productName = "Debug Driver";
+			productReference = B7A1C10612E3F24F00CADC97 /* debug-driver */;
+			productType = "com.apple.product-type.tool";
 		};
 		D2AAC0C605546C1D00DB518D /* Collections */ = {
 			isa = PBXNativeTarget;
@@ -191,6 +231,7 @@
 			targets = (
 				D2AAC0C605546C1D00DB518D /* Collections */,
 				B76C5D6912DE1E1B0058DF08 /* Unit Tests */,
+				B7A1C10512E3F24F00CADC97 /* Debug Driver */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +271,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7A1C10312E3F24F00CADC97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7A1C10B12E3F28E00CADC97 /* DebugDriver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2AAC0C405546C1D00DB518D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +295,11 @@
 			isa = PBXTargetDependency;
 			target = D2AAC0C605546C1D00DB518D /* Collections */;
 			targetProxy = B76C5D9F12DE1F370058DF08 /* PBXContainerItemProxy */;
+		};
+		B7A1C10E12E3F29A00CADC97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC0C605546C1D00DB518D /* Collections */;
+			targetProxy = B7A1C10D12E3F29A00CADC97 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -381,6 +435,58 @@
 			};
 			name = Release;
 		};
+		B7A1C10812E3F24F00CADC97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INSTALL_PATH = /usr/local/bin;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/.";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "debug-driver";
+			};
+			name = Debug;
+		};
+		B7A1C10912E3F24F00CADC97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INSTALL_PATH = /usr/local/bin;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/.";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "debug-driver";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +513,15 @@
 			buildConfigurations = (
 				B76C5D6C12DE1E1B0058DF08 /* Debug */,
 				B76C5D6D12DE1E1B0058DF08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7A1C10C12E3F28F00CADC97 /* Build configuration list for PBXNativeTarget "Debug Driver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7A1C10812E3F24F00CADC97 /* Debug */,
+				B7A1C10912E3F24F00CADC97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
