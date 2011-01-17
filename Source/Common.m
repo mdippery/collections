@@ -21,6 +21,7 @@
  */
 
 #import "Common.h"
+#import "MDPair.h"
 
 #define IMMUTABLE_COPY(o)   [[o copy] autorelease]
 
@@ -142,7 +143,7 @@ id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
     return IMMUTABLE_COPY(acc);
 }
 
-NSArray *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
+MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
 {
     for (id item in collection) {
         id acc = block(item) ? trueAcc : falseAcc;
@@ -151,7 +152,7 @@ NSArray *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)
     
     id t = [[trueAcc copy] autorelease];
     id f = [[falseAcc copy] autorelease];
-    return [NSArray arrayWithObjects:t, f, nil];
+    return [MDPair pairWithFirstObject:t secondObject:f];
 }
 
 id take_foreach(id collection, id acc, BOOL (^take)(id))

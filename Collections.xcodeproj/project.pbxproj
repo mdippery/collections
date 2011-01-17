@@ -17,6 +17,8 @@
 		B7A1C10B12E3F28E00CADC97 /* DebugDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */; };
 		B7A1C10F12E3F29D00CADC97 /* libCollections.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.dylib */; };
 		B7A1C11012E3F2A700CADC97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
+		B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A1C18912E3FA0100CADC97 /* MDPair.h */; };
+		B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C18A12E3FA0100CADC97 /* MDPair.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +33,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC0C605546C1D00DB518D /* Collections */;
+			remoteGlobalIDString = D2AAC0C605546C1D00DB518D;
 			remoteInfo = Collections;
 		};
 /* End PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B77EEBEF12E3907B00567D8C /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
 		B7A1C10612E3F24F00CADC97 /* debug-driver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "debug-driver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugDriver.m; path = Tests/DebugDriver.m; sourceTree = "<group>"; };
+		B7A1C18912E3FA0100CADC97 /* MDPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPair.h; path = Source/MDPair.h; sourceTree = "<group>"; };
+		B7A1C18A12E3FA0100CADC97 /* MDPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPair.m; path = Source/MDPair.m; sourceTree = "<group>"; };
 		D2AAC0C705546C1D00DB518D /* libCollections.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,8 @@
 			children = (
 				B77EEBEE12E3907B00567D8C /* Common.h */,
 				B77EEBEF12E3907B00567D8C /* Common.m */,
+				B7A1C18912E3FA0100CADC97 /* MDPair.h */,
+				B7A1C18A12E3FA0100CADC97 /* MDPair.m */,
 				B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */,
 				B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */,
 			);
@@ -150,6 +156,7 @@
 			files = (
 				B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */,
 				B77EEBF012E3907B00567D8C /* Common.h in Headers */,
+				B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +292,7 @@
 			files = (
 				B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */,
 				B77EEBF112E3907B00567D8C /* Common.m in Sources */,
+				B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

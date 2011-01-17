@@ -1,4 +1,5 @@
 #import "TestCollections.h"
+#import "MDPair.h"
 #import "NSArrayCollections.h"
 
 
@@ -208,10 +209,9 @@
         }
     }
 
-    NSArray *partition = [allPositive partition:^ BOOL (id obj) { return [obj integerValue] % 2 == 0; }];
-    STAssertEquals([partition count], (NSUInteger) 2U, @"partition should consist of two arrays");
-    NSArray *retEvens = [partition objectAtIndex:0];
-    NSArray *retOdds = [partition objectAtIndex:1];
+    MDPair *partition = [allPositive partition:^ BOOL (id obj) { return [obj integerValue] % 2 == 0; }];
+    NSArray *retEvens = [partition firstObject];
+    NSArray *retOdds = [partition secondObject];
     STAssertEquals([retEvens count], [evens count], @"returned evens is not same size as evens");
     STAssertEquals([retOdds count], [odds count], @"returned odds is not same size as odds");
     for (NSUInteger i = 0U; i < [retEvens count]; i++) {

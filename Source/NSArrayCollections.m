@@ -22,6 +22,7 @@
 
 #import "NSArrayCollections.h"
 #import "Common.h"
+#import "MDPair.h"
 
 
 @implementation NSArray (SmalltalkCollections)
@@ -120,7 +121,7 @@
     return find_min(self, block);
 }
 
-- (NSArray *)partition:(BOOL (^)(id obj))block
+- (MDPair *)partition:(BOOL (^)(id obj))block
 {
     NSMutableArray *trueVals = [NSMutableArray arrayWithCapacity:[self count]/2];
     NSMutableArray *falseVals = [NSMutableArray arrayWithCapacity:[self count]/2];

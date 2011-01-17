@@ -22,29 +22,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class MDPair;
 
+@interface MDPair : NSObject
+{
+    id firstObject;
+    id secondObject;
+}
 
-@interface NSArray (SmalltalkCollections)
-- (NSArray *)do:(void (^)(id obj))block;
-- (NSArray *)collect:(id (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none;
-- (id)inject:(id)initial into:(id (^)(id memo, id obj))block;
-- (NSArray *)reject:(BOOL (^)(id obj))block;
-- (NSArray *)select:(BOOL (^)(id obj))block;
-@end
+@property (nonatomic, readonly) id firstObject;
+@property (nonatomic, readonly) id secondObject;
 
-@interface NSArray (RubyEnumerable)
-- (BOOL)all:(BOOL (^)(id obj))block;
-- (BOOL)any:(BOOL (^)(id obj))block;
-- (BOOL)none:(BOOL (^)(id obj))block;
-- (BOOL)one:(BOOL (^)(id obj))block;
-- (NSArray *)drop:(NSUInteger)n;
-- (NSArray *)dropWhile:(BOOL (^)(id obj))block;
-- (id)max:(NSComparator)block;
-- (id)min:(NSComparator)block;
-- (MDPair *)partition:(BOOL (^)(id obj))block;
-- (NSArray *)take:(NSUInteger)n;
-- (NSArray *)takeWhile:(BOOL (^)(id obj))block;
++ (id)pairWithFirstObject:(id)first secondObject:(id)second;
+- (id)initWithFirstObject:(id)first secondObject:(id)second;
+
 @end

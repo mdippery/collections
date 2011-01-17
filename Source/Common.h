@@ -22,6 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class MDPair;
+
 #define find_max(collection, cmp)   do_comparison(collection, cmp, NSOrderedDescending)
 #define find_min(collection, cmp)   do_comparison(collection, cmp, NSOrderedAscending)
 
@@ -40,5 +42,5 @@ extern BOOL any_foreach(id collection, BOOL (^block)(id));
 extern BOOL none_foreach(id collection, BOOL (^block)(id));
 extern BOOL one_foreach(id collection, BOOL (^block)(id));
 extern id drop_foreach(id collection, id acc, BOOL (^drop)(id));
-extern NSArray *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id));
+extern MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id));
 extern id take_foreach(id collection, id acc, BOOL (^take)(id));

@@ -20,31 +20,37 @@
  * THE SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
-
-@class MDPair;
+#import "MDPair.h"
 
 
-@interface NSArray (SmalltalkCollections)
-- (NSArray *)do:(void (^)(id obj))block;
-- (NSArray *)collect:(id (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none;
-- (id)inject:(id)initial into:(id (^)(id memo, id obj))block;
-- (NSArray *)reject:(BOOL (^)(id obj))block;
-- (NSArray *)select:(BOOL (^)(id obj))block;
-@end
+@implementation MDPair
 
-@interface NSArray (RubyEnumerable)
-- (BOOL)all:(BOOL (^)(id obj))block;
-- (BOOL)any:(BOOL (^)(id obj))block;
-- (BOOL)none:(BOOL (^)(id obj))block;
-- (BOOL)one:(BOOL (^)(id obj))block;
-- (NSArray *)drop:(NSUInteger)n;
-- (NSArray *)dropWhile:(BOOL (^)(id obj))block;
-- (id)max:(NSComparator)block;
-- (id)min:(NSComparator)block;
-- (MDPair *)partition:(BOOL (^)(id obj))block;
-- (NSArray *)take:(NSUInteger)n;
-- (NSArray *)takeWhile:(BOOL (^)(id obj))block;
+@synthesize firstObject, secondObject;
+
++ (id)pairWithFirstObject:(id)first secondObject:(id)second
+{
+    return [[[self alloc] initWithFirstObject:first secondObject:second] autorelease];
+}
+
+- (id)initWithFirstObject:(id)first secondObject:(id)second
+{
+    if ((self = [super init])) {
+        firstObject = [first retain];
+        secondObject = [second retain];
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    [firstObject release];
+    [secondObject release];
+    [super dealloc];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ <%p> (firstObject = %@, secondObject = %@)", [self class], self, [self firstObject], [self secondObject]];
+}
+
 @end
