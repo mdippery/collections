@@ -4,9 +4,8 @@
 Smalltalk's [collection protocol][Smalltalk] and Ruby's
 [`Enumerable`][Ruby] mixin to Objective-C projects. **libCollections** adds
 these methods as categories to the Foundation framework's collections classes.
-Currently only `NSArray` is modified, and not all of Ruby's `Enumerable`
-methods are implemented. (Some of them aren't really relevant or useful and
-probably won't be.)
+(Not all of Ruby's `Enumerable` methods are implemented, but some of them
+aren't really relevant or useful and probably won't be.)
 
 ## What does it run on?
 
@@ -19,11 +18,11 @@ support should be trivial.
 
 ## Can I use it now?
 
-Meh. Most of the planned functionality is implemented for `NSArray`, but it
-hasn't been extensively tested (to be honest, the unit tests are kind of
-pathetic), nor has the code been written as "tightly" or efficiently as it
-could be. This is an early in-development version at the moment, so use at
-your own risk.
+Meh. Most of the planned functionality is implemented for `NSArray` and
+`NSSet`, but it hasn't been extensively tested (to be honest, the unit tests
+are kind of pathetic), nor has the code been written as "tightly" or
+efficiently as it could be. This is an early in-development version at the
+moment, so use at your own risk.
 
 ## Can you make it work on the iPhone?
 
