@@ -29,6 +29,8 @@
 
 #define default_detect(self, block) [self detect:block ifNone:^ id (void) { return nil; }];
 
+extern id do_comparison(id collection, NSComparator cmp, NSComparisonResult val);
+
 extern void do_foreach(id collection, void (^block)(id));
 extern id collect_foreach(id collection, id acc, id (^block)(id));
 extern id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void));
@@ -36,7 +38,6 @@ extern id inject_foreach(id collection, id initial, id (^into)(id, id));
 extern id select_foreach(id collection, id acc, BOOL (^block)(id));
 extern id reject_foreach(id collection, id acc, BOOL (^block)(id));
 
-extern id do_comparison(id collection, NSComparator cmp, NSComparisonResult val);
 extern BOOL all_foreach(id collection, BOOL (^block)(id));
 extern BOOL any_foreach(id collection, BOOL (^block)(id));
 extern BOOL none_foreach(id collection, BOOL (^block)(id));
