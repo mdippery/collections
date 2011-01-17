@@ -28,8 +28,6 @@
 @interface NSSet (SmalltalkCollections)
 - (NSSet *)do:(void (^)(id obj))block;
 - (NSSet *)collect:(id (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none;
 - (id)inject:(id)initial into:(id (^)(id memo, id obj))block;
 - (NSSet *)reject:(BOOL (^)(id obj))block;
 - (NSSet *)select:(BOOL (^)(id obj))block;
@@ -40,9 +38,7 @@
 - (BOOL)any:(BOOL (^)(id obj))block;
 - (BOOL)none:(BOOL (^)(id obj))block;
 - (BOOL)one:(BOOL (^)(id obj))block;
-- (NSSet *)dropWhile:(BOOL (^)(id obj))block;
 - (id)max:(NSComparator)block;
 - (id)min:(NSComparator)block;
 - (MDPair *)partition:(BOOL (^)(id obj))block;
-- (NSSet *)takeWhile:(BOOL (^)(id obj))block;
 @end

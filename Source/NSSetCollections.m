@@ -39,16 +39,6 @@
     return collect_foreach(self, s, block);
 }
 
-- (id)detect:(BOOL (^)(id obj))block
-{
-    return default_detect(self, block);
-}
-
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none
-{
-    return detect_foreach(self, block, none);
-}
-
 - (id)inject:(id)initial into:(id (^)(id memo, id obj))block
 {
     return inject_foreach(self, initial, block);
@@ -90,12 +80,6 @@
     return one_foreach(self, block);
 }
 
-- (NSSet *)dropWhile:(BOOL (^)(id obj))block
-{
-    NSMutableSet *s = [NSMutableSet setWithCapacity:[self count]];
-    return drop_foreach(self, s, block);
-}
-
 - (id)max:(NSComparator)block
 {
     return find_max(self, block);
@@ -111,12 +95,6 @@
     NSMutableSet *t = [NSMutableSet setWithCapacity:[self count]/2];
     NSMutableSet *f = [NSMutableSet setWithCapacity:[self count]/2];
     return partition_foreach(self, t, f, block);
-}
-
-- (NSSet *)takeWhile:(BOOL (^)(id obj))block
-{
-    NSMutableSet *s = [NSMutableSet setWithCapacity:[self count]];
-    return take_foreach(self, s, block);
 }
 
 @end
