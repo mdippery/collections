@@ -23,6 +23,23 @@
 #import "Common.h"
 #import "MDPair.h"
 
+#define IS_DICTIONARY(c)    [c isKindOfClass:[NSDictionary class]]
+#define IMMUTABLE_COPY(o)   [[o copy] autorelease]
+
+static id get_item(id collection, id val)
+{
+    return IS_DICTIONARY(collection) ? [collection objectForKey:val] : val;
+}
+
+static void set_item(id acc, id item, id val)
+{
+    if (IS_DICTIONARY(acc)) {
+        [acc setObject:item forKey:val];
+    } else {
+        [acc addObject:item];
+    }
+}
+
 void do_foreach(id collection, void (^block)(id))
 {
     for (id item in collection) {
@@ -32,8 +49,9 @@ void do_foreach(id collection, void (^block)(id))
 
 id collect_foreach(id collection, id acc, id (^block)(id))
 {
-    for (id item in collection) {
-        [acc addObject:block(item)];
+    for (id val in collection) {
+        id item = get_item(collection, val);
+        set_item(acc, block(item), val);
     }
     return IMMUTABLE_COPY(acc);
 }
@@ -56,9 +74,10 @@ id inject_foreach(id collection, id initial, id (^into)(id, id))
 
 id select_foreach(id collection, id acc, BOOL (^block)(id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = get_item(collection, val);
         if (block(item)) {
-            [acc addObject:item];
+            set_item(acc, item, val);
         }
     }
     return IMMUTABLE_COPY(acc);
@@ -66,9 +85,10 @@ id select_foreach(id collection, id acc, BOOL (^block)(id))
 
 id reject_foreach(id collection, id acc, BOOL (^block)(id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = get_item(collection, val);
         if (!block(item)) {
-            [acc addObject:item];
+            set_item(acc, item, val);
         }
     }
     return IMMUTABLE_COPY(acc);
@@ -128,13 +148,14 @@ BOOL one_foreach(id collection, BOOL (^block)(id))
 id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
 {
     BOOL dropFailed = NO;
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = get_item(collection, val);
         if (dropFailed) {
-            [acc addObject:item];
+            set_item(acc, item, val);
         } else {
             if (!drop(item)) {
                 dropFailed = YES;
-                [acc addObject:item];
+                set_item(acc, item, val);
             }
         }
     }
@@ -143,21 +164,20 @@ id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
 
 MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = get_item(collection, val);
         id acc = block(item) ? trueAcc : falseAcc;
-        [acc addObject:item];
+        set_item(acc, item, val);
     }
-    
-    id t = [[trueAcc copy] autorelease];
-    id f = [[falseAcc copy] autorelease];
-    return [MDPair pairWithFirstObject:t secondObject:f];
+    return [MDPair pairWithFirstObject:IMMUTABLE_COPY(trueAcc) secondObject:IMMUTABLE_COPY(falseAcc)];
 }
 
 id take_foreach(id collection, id acc, BOOL (^take)(id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = get_item(collection, val);
         if (!take(item)) goto take_exit;
-        [acc addObject:item];
+        set_item(acc, item, val);
     }
 take_exit:
     return IMMUTABLE_COPY(acc);
