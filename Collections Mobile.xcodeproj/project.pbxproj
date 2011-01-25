@@ -56,7 +56,7 @@
 		0867D691FE84028FC02AAC07 /* Collections (iOS) */ = {
 			isa = PBXGroup;
 			children = (
-				08FB77AEFE84172EC02AAC07 /* Classes */,
+				08FB77AEFE84172EC02AAC07 /* Library */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -72,19 +72,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+		08FB77AEFE84172EC02AAC07 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				B74896F012E63A4C009AF6D1 /* Common.h */,
 				B74896F112E63A4C009AF6D1 /* Common.m */,
-				B74896F212E63A4C009AF6D1 /* MDPair.h */,
-				B74896F312E63A4C009AF6D1 /* MDPair.m */,
-				B74896F412E63A4C009AF6D1 /* NSArrayCollections.h */,
-				B74896F512E63A4C009AF6D1 /* NSArrayCollections.m */,
-				B74896F612E63A4C009AF6D1 /* NSSetCollections.h */,
-				B74896F712E63A4C009AF6D1 /* NSSetCollections.m */,
+				B7BC514712EF86D700DD7603 /* Additions */,
+				B7BC514812EF86E200DD7603 /* Support Classes */,
 			);
-			name = Classes;
+			name = Library;
 			sourceTree = "<group>";
 		};
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
@@ -93,6 +89,26 @@
 				AA747D9E0F9514B9006C5449 /* collections.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B7BC514712EF86D700DD7603 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B74896F412E63A4C009AF6D1 /* NSArrayCollections.h */,
+				B74896F512E63A4C009AF6D1 /* NSArrayCollections.m */,
+				B74896F612E63A4C009AF6D1 /* NSSetCollections.h */,
+				B74896F712E63A4C009AF6D1 /* NSSetCollections.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		B7BC514812EF86E200DD7603 /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B74896F212E63A4C009AF6D1 /* MDPair.h */,
+				B74896F312E63A4C009AF6D1 /* MDPair.m */,
+			);
+			name = "Support Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +151,7 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Collections (iOS)" */;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Collections Mobile" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -251,7 +267,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Collections (iOS)" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "Collections Mobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
