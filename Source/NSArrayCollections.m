@@ -134,7 +134,7 @@
     for (NSUInteger i = 0U; i < n; i++) {
         [a addObject:[self objectAtIndex:i]];
     }
-    return [[a copy] autorelease];
+    return IMMUTABLE_COPY(a);
 }
 
 - (NSArray *)takeWhile:(BOOL (^)(id obj))block

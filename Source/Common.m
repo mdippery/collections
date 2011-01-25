@@ -23,8 +23,6 @@
 #import "Common.h"
 #import "MDPair.h"
 
-#define IMMUTABLE_COPY(o)   [[o copy] autorelease]
-
 void do_foreach(id collection, void (^block)(id))
 {
     for (id item in collection) {
@@ -73,7 +71,7 @@ id reject_foreach(id collection, id acc, BOOL (^block)(id))
             [acc addObject:item];
         }
     }
-    return [[acc copy] autorelease];
+    return IMMUTABLE_COPY(acc);
 }
 
 id do_comparison(id collection, NSComparator cmp, NSComparisonResult val)
