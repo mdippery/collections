@@ -158,8 +158,9 @@ MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(
 id take_foreach(id collection, id acc, BOOL (^take)(id))
 {
     for (id item in collection) {
-        if (!take(item)) return IMMUTABLE_COPY(acc);
+        if (!take(item)) goto take_exit;
         [acc addObject:item];
     }
+take_exit:
     return IMMUTABLE_COPY(acc);
 }
