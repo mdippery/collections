@@ -56,3 +56,42 @@
 }
 
 @end
+
+@interface NSDictionary (RubyEnumerable)
+
+- (BOOL)all:(BOOL (^)(id obj))block
+{
+    return NO;
+}
+
+- (BOOL)any:(BOOL (^)(id obj))block
+{
+    return NO;
+}
+
+- (BOOL)none:(BOOL (^)(id obj))block
+{
+    return NO;
+}
+
+- (BOOL)one:(BOOL (^)(id obj))block
+{
+    return NO;
+}
+
+- (id)max:(NSComparator)block
+{
+    return nil;
+}
+
+- (id)min:(NSComparator)block
+{
+    return nil;
+}
+
+- (MDPair *)partition:(BOOL (^)(id obj))block
+{
+    return nil;
+}
+
+@end
