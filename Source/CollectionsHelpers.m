@@ -25,7 +25,7 @@
 
 @implementation NSObject (CollectionsHelpers)
 
-- (id)immutableCopy
+- (id)freeze
 {
     return [[self copy] autorelease];
 }

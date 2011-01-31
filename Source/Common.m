@@ -37,7 +37,7 @@ id collect_foreach(id collection, id acc, id (^block)(id))
         id item = [collection objectForValue:val];
         [acc setObject:block(item) forValue:val];
     }
-    return [acc immutableCopy];
+    return [acc freeze];
 }
 
 id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void))
@@ -64,7 +64,7 @@ id select_foreach(id collection, id acc, BOOL (^block)(id))
             [acc setObject:item forValue:val];
         }
     }
-    return [acc immutableCopy];
+    return [acc freeze];
 }
 
 id reject_foreach(id collection, id acc, BOOL (^block)(id))
@@ -75,7 +75,7 @@ id reject_foreach(id collection, id acc, BOOL (^block)(id))
             [acc setObject:item forValue:val];
         }
     }
-    return [acc immutableCopy];
+    return [acc freeze];
 }
 
 id do_comparison(id collection, NSComparator cmp, NSComparisonResult val)
@@ -143,7 +143,7 @@ id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
             }
         }
     }
-    return [acc immutableCopy];
+    return [acc freeze];
 }
 
 MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
@@ -153,7 +153,7 @@ MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(
         id acc = block(item) ? trueAcc : falseAcc;
         [acc setObject:item forValue:val];
     }
-    return [MDPair pairWithFirstObject:[trueAcc immutableCopy] secondObject:[falseAcc immutableCopy]];
+    return [MDPair pairWithFirstObject:[trueAcc freeze] secondObject:[falseAcc freeze]];
 }
 
 id take_foreach(id collection, id acc, BOOL (^take)(id))
@@ -164,5 +164,5 @@ id take_foreach(id collection, id acc, BOOL (^take)(id))
         [acc setObject:item forValue:val];
     }
 take_exit:
-    return [acc immutableCopy];
+    return [acc freeze];
 }

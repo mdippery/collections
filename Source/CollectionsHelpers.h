@@ -23,7 +23,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (CollectionsHelpers)
-- (id)immutableCopy;
+- (id)freeze;
 @end
 
 @interface NSArray (CollectionsHelpers)
