@@ -26,7 +26,8 @@
 
 void do_foreach(id collection, void (^block)(id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = [collection objectForValue:val];
         block(item);
     }
 }
