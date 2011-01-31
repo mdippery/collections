@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B749BEA912F7412A00298360 /* CollectionsHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B749BEA712F7412A00298360 /* CollectionsHelpers.h */; };
+		B749BEAA12F7412A00298360 /* CollectionsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B749BEA812F7412A00298360 /* CollectionsHelpers.m */; };
 		B76C5CEE12DE0BFA0058DF08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
 		B76C5D0A12DE0F250058DF08 /* NSArrayCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B76C5D0B12DE0F250058DF08 /* NSArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		32DBCF5E0370ADEE00C91783 /* collections.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collections.pch; path = Source/collections.pch; sourceTree = "<group>"; };
+		B749BEA712F7412A00298360 /* CollectionsHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionsHelpers.h; path = Source/CollectionsHelpers.h; sourceTree = "<group>"; };
+		B749BEA812F7412A00298360 /* CollectionsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionsHelpers.m; path = Source/CollectionsHelpers.m; sourceTree = "<group>"; };
 		B76C5CED12DE0BFA0058DF08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B76C5D0812DE0F250058DF08 /* NSArrayCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayCollections.h; path = Source/NSArrayCollections.h; sourceTree = "<group>"; };
 		B76C5D0912DE0F250058DF08 /* NSArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayCollections.m; path = Source/NSArrayCollections.m; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 				B77EEBEE12E3907B00567D8C /* Common.h */,
 				B77EEBEF12E3907B00567D8C /* Common.m */,
 				B7BC512112EF845E00DD7603 /* Additions */,
+				B749BEAB12F7413F00298360 /* Helpers */,
 				B7BC512012EF844A00DD7603 /* Support Classes */,
 			);
 			name = Library;
@@ -131,6 +136,15 @@
 				32DBCF5E0370ADEE00C91783 /* collections.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B749BEAB12F7413F00298360 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B749BEA712F7412A00298360 /* CollectionsHelpers.h */,
+				B749BEA812F7412A00298360 /* CollectionsHelpers.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		B76C5CEC12DE0BEA0058DF08 /* Frameworks */ = {
@@ -185,6 +199,7 @@
 				B77EEBF012E3907B00567D8C /* Common.h in Headers */,
 				B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */,
 				B7A1C1F812E3FFE300CADC97 /* NSSetCollections.h in Headers */,
+				B749BEA912F7412A00298360 /* CollectionsHelpers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +338,7 @@
 				B77EEBF112E3907B00567D8C /* Common.m in Sources */,
 				B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */,
 				B7A1C1F912E3FFE300CADC97 /* NSSetCollections.m in Sources */,
+				B749BEAA12F7412A00298360 /* CollectionsHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

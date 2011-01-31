@@ -22,23 +22,7 @@
 
 #import "Common.h"
 #import "MDPair.h"
-
-#define IS_DICTIONARY(c)    [c isKindOfClass:[NSDictionary class]]
-#define IMMUTABLE_COPY(o)   [[o copy] autorelease]
-
-static id get_item(id collection, id val)
-{
-    return IS_DICTIONARY(collection) ? [collection objectForKey:val] : val;
-}
-
-static void set_item(id acc, id item, id val)
-{
-    if (IS_DICTIONARY(acc)) {
-        [acc setObject:item forKey:val];
-    } else {
-        [acc addObject:item];
-    }
-}
+#import "CollectionsHelpers.h"
 
 void do_foreach(id collection, void (^block)(id))
 {
@@ -50,10 +34,10 @@ void do_foreach(id collection, void (^block)(id))
 id collect_foreach(id collection, id acc, id (^block)(id))
 {
     for (id val in collection) {
-        id item = get_item(collection, val);
-        set_item(acc, block(item), val);
+        id item = [collection objectForValue:val];
+        [acc setObject:block(item) forValue:val];
     }
-    return IMMUTABLE_COPY(acc);
+    return [acc immutableCopy];
 }
 
 id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void))
@@ -75,23 +59,23 @@ id inject_foreach(id collection, id initial, id (^into)(id, id))
 id select_foreach(id collection, id acc, BOOL (^block)(id))
 {
     for (id val in collection) {
-        id item = get_item(collection, val);
+        id item = [collection objectForValue:val];
         if (block(item)) {
-            set_item(acc, item, val);
+            [acc setObject:item forValue:val];
         }
     }
-    return IMMUTABLE_COPY(acc);
+    return [acc immutableCopy];
 }
 
 id reject_foreach(id collection, id acc, BOOL (^block)(id))
 {
     for (id val in collection) {
-        id item = get_item(collection, val);
+        id item = [collection objectForValue:val];
         if (!block(item)) {
-            set_item(acc, item, val);
+            [acc setObject:item forValue:val];
         }
     }
-    return IMMUTABLE_COPY(acc);
+    return [acc immutableCopy];
 }
 
 id do_comparison(id collection, NSComparator cmp, NSComparisonResult val)
@@ -149,36 +133,36 @@ id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
 {
     BOOL dropFailed = NO;
     for (id val in collection) {
-        id item = get_item(collection, val);
+        id item = [collection objectForValue:val];
         if (dropFailed) {
-            set_item(acc, item, val);
+            [acc setObject:item forValue:val];
         } else {
             if (!drop(item)) {
                 dropFailed = YES;
-                set_item(acc, item, val);
+                [acc setObject:item forValue:val];
             }
         }
     }
-    return IMMUTABLE_COPY(acc);
+    return [acc immutableCopy];
 }
 
 MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
 {
     for (id val in collection) {
-        id item = get_item(collection, val);
+        id item = [collection objectForValue:val];
         id acc = block(item) ? trueAcc : falseAcc;
-        set_item(acc, item, val);
+        [acc setObject:item forValue:val];
     }
-    return [MDPair pairWithFirstObject:IMMUTABLE_COPY(trueAcc) secondObject:IMMUTABLE_COPY(falseAcc)];
+    return [MDPair pairWithFirstObject:[trueAcc immutableCopy] secondObject:[falseAcc immutableCopy]];
 }
 
 id take_foreach(id collection, id acc, BOOL (^take)(id))
 {
     for (id val in collection) {
-        id item = get_item(collection, val);
+        id item = [collection objectForValue:val];
         if (!take(item)) goto take_exit;
-        set_item(acc, item, val);
+        [acc setObject:item forValue:val];
     }
 take_exit:
-    return IMMUTABLE_COPY(acc);
+    return [acc immutableCopy];
 }
