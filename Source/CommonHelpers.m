@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import "CollectionsHelpers.h"
+#import "CommonHelpers.h"
 
 
 @implementation NSObject (CollectionsHelpers)

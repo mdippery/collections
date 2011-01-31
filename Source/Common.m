@@ -22,7 +22,7 @@
 
 #import "Common.h"
 #import "MDPair.h"
-#import "CollectionsHelpers.h"
+#import "CommonHelpers.h"
 
 void do_foreach(id collection, void (^block)(id))
 {

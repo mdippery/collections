@@ -57,7 +57,7 @@
 
 @end
 
-@interface NSDictionary (RubyEnumerable)
+@implementation NSDictionary (RubyEnumerable)
 
 - (BOOL)all:(BOOL (^)(id obj))block
 {

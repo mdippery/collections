@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B749BEA912F7412A00298360 /* CollectionsHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B749BEA712F7412A00298360 /* CollectionsHelpers.h */; };
-		B749BEAA12F7412A00298360 /* CollectionsHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B749BEA812F7412A00298360 /* CollectionsHelpers.m */; };
+		B749BEA912F7412A00298360 /* CommonHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B749BEA712F7412A00298360 /* CommonHelpers.h */; };
+		B749BEAA12F7412A00298360 /* CommonHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B749BEA812F7412A00298360 /* CommonHelpers.m */; };
 		B749BF1E12F747B900298360 /* NSDictionaryCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B749BF1C12F747B900298360 /* NSDictionaryCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B749BF1F12F747B900298360 /* NSDictionaryCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B749BF1D12F747B900298360 /* NSDictionaryCollections.m */; };
 		B749BF5212F74B3900298360 /* TestDictionaryCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B749BF4012F7490B00298360 /* TestDictionaryCollections.m */; };
@@ -38,8 +38,8 @@
 
 /* Begin PBXFileReference section */
 		32DBCF5E0370ADEE00C91783 /* collections.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collections.pch; path = Source/collections.pch; sourceTree = "<group>"; };
-		B749BEA712F7412A00298360 /* CollectionsHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionsHelpers.h; path = Source/CollectionsHelpers.h; sourceTree = "<group>"; };
-		B749BEA812F7412A00298360 /* CollectionsHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CollectionsHelpers.m; path = Source/CollectionsHelpers.m; sourceTree = "<group>"; };
+		B749BEA712F7412A00298360 /* CommonHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHelpers.h; path = Source/CommonHelpers.h; sourceTree = "<group>"; };
+		B749BEA812F7412A00298360 /* CommonHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonHelpers.m; path = Source/CommonHelpers.m; sourceTree = "<group>"; };
 		B749BF1C12F747B900298360 /* NSDictionaryCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDictionaryCollections.h; path = Source/NSDictionaryCollections.h; sourceTree = "<group>"; };
 		B749BF1D12F747B900298360 /* NSDictionaryCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryCollections.m; path = Source/NSDictionaryCollections.m; sourceTree = "<group>"; };
 		B749BF3F12F7490B00298360 /* TestDictionaryCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestDictionaryCollections.h; path = Tests/TestDictionaryCollections.h; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		B749BEAB12F7413F00298360 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B749BEA712F7412A00298360 /* CollectionsHelpers.h */,
-				B749BEA812F7412A00298360 /* CollectionsHelpers.m */,
+				B749BEA712F7412A00298360 /* CommonHelpers.h */,
+				B749BEA812F7412A00298360 /* CommonHelpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				B77EEBF012E3907B00567D8C /* Common.h in Headers */,
 				B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */,
 				B7A1C1F812E3FFE300CADC97 /* NSSetCollections.h in Headers */,
-				B749BEA912F7412A00298360 /* CollectionsHelpers.h in Headers */,
+				B749BEA912F7412A00298360 /* CommonHelpers.h in Headers */,
 				B749BF1E12F747B900298360 /* NSDictionaryCollections.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +302,7 @@
 				B77EEBF112E3907B00567D8C /* Common.m in Sources */,
 				B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */,
 				B7A1C1F912E3FFE300CADC97 /* NSSetCollections.m in Sources */,
-				B749BEAA12F7412A00298360 /* CollectionsHelpers.m in Sources */,
+				B749BEAA12F7412A00298360 /* CommonHelpers.m in Sources */,
 				B749BF1F12F747B900298360 /* NSDictionaryCollections.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
