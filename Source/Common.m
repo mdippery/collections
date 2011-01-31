@@ -51,7 +51,8 @@ id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void))
 
 id inject_foreach(id collection, id initial, id (^into)(id, id))
 {
-    for (id item in collection) {
+    for (id val in collection) {
+        id item = [collection objectForValue:val];
         initial = into(initial, item);
     }
     return initial;
