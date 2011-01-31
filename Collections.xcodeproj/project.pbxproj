@@ -16,9 +16,6 @@
 		B76C5E5C12DE21D10058DF08 /* libCollections.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.A.dylib */; };
 		B77EEBF012E3907B00567D8C /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = B77EEBEE12E3907B00567D8C /* Common.h */; };
 		B77EEBF112E3907B00567D8C /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B77EEBEF12E3907B00567D8C /* Common.m */; };
-		B7A1C10B12E3F28E00CADC97 /* DebugDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */; };
-		B7A1C10F12E3F29D00CADC97 /* libCollections.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AAC0C705546C1D00DB518D /* libCollections.A.dylib */; };
-		B7A1C11012E3F2A700CADC97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B76C5CED12DE0BFA0058DF08 /* Foundation.framework */; };
 		B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A1C18912E3FA0100CADC97 /* MDPair.h */; };
 		B7A1C18C12E3FA0100CADC97 /* MDPair.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C18A12E3FA0100CADC97 /* MDPair.m */; };
 		B7A1C1F812E3FFE300CADC97 /* NSSetCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A1C1F612E3FFE300CADC97 /* NSSetCollections.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,8 +53,6 @@
 		B76C5DA912DE1F6C0058DF08 /* TestArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestArrayCollections.m; path = Tests/TestArrayCollections.m; sourceTree = "<group>"; };
 		B77EEBEE12E3907B00567D8C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = Source/Common.h; sourceTree = "<group>"; };
 		B77EEBEF12E3907B00567D8C /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
-		B7A1C10612E3F24F00CADC97 /* debug-driver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "debug-driver"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugDriver.m; path = Tests/DebugDriver.m; sourceTree = "<group>"; };
 		B7A1C18912E3FA0100CADC97 /* MDPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPair.h; path = Source/MDPair.h; sourceTree = "<group>"; };
 		B7A1C18A12E3FA0100CADC97 /* MDPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPair.m; path = Source/MDPair.m; sourceTree = "<group>"; };
 		B7A1C1F612E3FFE300CADC97 /* NSSetCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSSetCollections.h; path = Source/NSSetCollections.h; sourceTree = "<group>"; };
@@ -73,15 +68,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B76C5E5C12DE21D10058DF08 /* libCollections.A.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7A1C10412E3F24F00CADC97 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7A1C10F12E3F29D00CADC97 /* libCollections.A.dylib in Frameworks */,
-				B7A1C11012E3F2A700CADC97 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +87,6 @@
 			children = (
 				D2AAC0C705546C1D00DB518D /* libCollections.A.dylib */,
 				B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */,
-				B7A1C10612E3F24F00CADC97 /* debug-driver */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,7 +148,6 @@
 				B7A1C2CB12E407ED00CADC97 /* TestSetCollections.h */,
 				B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */,
 				B76C5D6B12DE1E1B0058DF08 /* Info.plist */,
-				B7A1C10A12E3F28E00CADC97 /* DebugDriver.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -225,23 +209,6 @@
 			productReference = B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		B7A1C10512E3F24F00CADC97 /* Debug Driver */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7A1C10C12E3F28F00CADC97 /* Build configuration list for PBXNativeTarget "Debug Driver" */;
-			buildPhases = (
-				B7A1C10312E3F24F00CADC97 /* Sources */,
-				B7A1C10412E3F24F00CADC97 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B7A1C10E12E3F29A00CADC97 /* PBXTargetDependency */,
-			);
-			name = "Debug Driver";
-			productName = "Debug Driver";
-			productReference = B7A1C10612E3F24F00CADC97 /* debug-driver */;
-			productType = "com.apple.product-type.tool";
-		};
 		D2AAC0C605546C1D00DB518D /* Collections */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB917D08733D990010E9CD /* Build configuration list for PBXNativeTarget "Collections" */;
@@ -281,7 +248,6 @@
 			targets = (
 				D2AAC0C605546C1D00DB518D /* Collections */,
 				B76C5D6912DE1E1B0058DF08 /* Unit Tests */,
-				B7A1C10512E3F24F00CADC97 /* Debug Driver */,
 			);
 		};
 /* End PBXProject section */
@@ -319,14 +285,7 @@
 			files = (
 				B76C5DAA12DE1F6C0058DF08 /* TestArrayCollections.m in Sources */,
 				B7A1C2CD12E407ED00CADC97 /* TestSetCollections.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7A1C10312E3F24F00CADC97 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7A1C10B12E3F28E00CADC97 /* DebugDriver.m in Sources */,
+				B749BF5212F74B3900298360 /* TestDictionaryCollections.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,58 +446,6 @@
 			};
 			name = Release;
 		};
-		B7A1C10812E3F24F00CADC97 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/.";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "debug-driver";
-			};
-			name = Debug;
-		};
-		B7A1C10912E3F24F00CADC97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
-				INSTALL_PATH = /usr/local/bin;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/.";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-framework",
-					Foundation,
-				);
-				PREBINDING = NO;
-				PRODUCT_NAME = "debug-driver";
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -565,15 +472,6 @@
 			buildConfigurations = (
 				B76C5D6C12DE1E1B0058DF08 /* Debug */,
 				B76C5D6D12DE1E1B0058DF08 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B7A1C10C12E3F28F00CADC97 /* Build configuration list for PBXNativeTarget "Debug Driver" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B7A1C10812E3F24F00CADC97 /* Debug */,
-				B7A1C10912E3F24F00CADC97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
