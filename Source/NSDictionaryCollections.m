@@ -61,37 +61,39 @@
 
 - (BOOL)all:(BOOL (^)(id obj))block
 {
-    return NO;
+    return all_foreach(self, block);
 }
 
 - (BOOL)any:(BOOL (^)(id obj))block
 {
-    return NO;
+    return any_foreach(self, block);
 }
 
 - (BOOL)none:(BOOL (^)(id obj))block
 {
-    return NO;
+    return none_foreach(self, block);
 }
 
 - (BOOL)one:(BOOL (^)(id obj))block
 {
-    return NO;
+    return one_foreach(self, block);
 }
 
 - (id)max:(NSComparator)block
 {
-    return nil;
+    return find_max(self, block);
 }
 
 - (id)min:(NSComparator)block
 {
-    return nil;
+    return find_min(self, block);
 }
 
 - (MDPair *)partition:(BOOL (^)(id obj))block
 {
-    return nil;
+    NSMutableDictionary *t = [NSMutableDictionary dictionaryWithCapacity:[self count] / 2];
+    NSMutableDictionary *f = [NSMutableDictionary dictionaryWithCapacity:[self count] / 2];
+    return partition_foreach(self, t, f, block);
 }
 
 @end
