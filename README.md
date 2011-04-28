@@ -15,9 +15,9 @@ OS X, and as a static library for iOS.
 
 ## Can I use it now?
 
-Meh. Most of the planned functionality is implemented for `NSArray` and
-`NSSet`, but it hasn't been extensively tested (to be honest, the unit tests
-are kind of pathetic), nor has the code been written as "tightly" or
+Maybe. The planned functionality is implemented for `NSArray`, `NSSet`, and
+`NSDictionary`, but it hasn't been extensively tested (to be honest, the unit
+tests are kind of pathetic), nor has the code been written as "tightly" or
 efficiently as it could be. It hasn't been tested in an iOS app at all. This
 is an early in-development version at the moment, so use at your own risk.
 
