@@ -24,8 +24,6 @@
 
 @class MDPair;
 
-#define IMMUTABLE_COPY(o)           [[o copy] autorelease]
-
 #define find_max(collection, cmp)   do_comparison(collection, cmp, NSOrderedDescending)
 #define find_min(collection, cmp)   do_comparison(collection, cmp, NSOrderedAscending)
 

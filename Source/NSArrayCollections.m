@@ -22,6 +22,7 @@
 
 #import "NSArrayCollections.h"
 #import "Common.h"
+#import "CommonHelpers.h"
 #import "MDPair.h"
 
 
@@ -102,7 +103,7 @@
     for (NSUInteger i = n; i < [self count]; i++) {
         [a addObject:[self objectAtIndex:i]];
     }
-    return [[a copy] autorelease];
+    return [a freeze];
 }
 
 - (NSArray *)dropWhile:(BOOL (^)(id obj))block
@@ -134,7 +135,7 @@
     for (NSUInteger i = 0U; i < n; i++) {
         [a addObject:[self objectAtIndex:i]];
     }
-    return IMMUTABLE_COPY(a);
+    return [a freeze];
 }
 
 - (NSArray *)takeWhile:(BOOL (^)(id obj))block
