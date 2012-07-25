@@ -13,14 +13,14 @@
 		B74896F912E63A4C009AF6D1 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F112E63A4C009AF6D1 /* Common.m */; };
 		B74896FA12E63A4C009AF6D1 /* MDPair.h in Headers */ = {isa = PBXBuildFile; fileRef = B74896F212E63A4C009AF6D1 /* MDPair.h */; };
 		B74896FB12E63A4C009AF6D1 /* MDPair.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F312E63A4C009AF6D1 /* MDPair.m */; };
-		B74896FC12E63A4C009AF6D1 /* NSArrayCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B74896F412E63A4C009AF6D1 /* NSArrayCollections.h */; };
-		B74896FD12E63A4C009AF6D1 /* NSArrayCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F512E63A4C009AF6D1 /* NSArrayCollections.m */; };
-		B74896FE12E63A4C009AF6D1 /* NSSetCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B74896F612E63A4C009AF6D1 /* NSSetCollections.h */; };
-		B74896FF12E63A4C009AF6D1 /* NSSetCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F712E63A4C009AF6D1 /* NSSetCollections.m */; };
+		B74896FC12E63A4C009AF6D1 /* NSArray+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B74896F412E63A4C009AF6D1 /* NSArray+Collections.h */; };
+		B74896FD12E63A4C009AF6D1 /* NSArray+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F512E63A4C009AF6D1 /* NSArray+Collections.m */; };
+		B74896FE12E63A4C009AF6D1 /* NSSet+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B74896F612E63A4C009AF6D1 /* NSSet+Collections.h */; };
+		B74896FF12E63A4C009AF6D1 /* NSSet+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B74896F712E63A4C009AF6D1 /* NSSet+Collections.m */; };
 		B7569AA712F75D6E00717C15 /* CommonHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B7569AA512F75D6E00717C15 /* CommonHelpers.h */; };
 		B7569AA812F75D6E00717C15 /* CommonHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = B7569AA612F75D6E00717C15 /* CommonHelpers.m */; };
-		B7569AB312F75D9400717C15 /* NSDictionaryCollections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7569AB112F75D9400717C15 /* NSDictionaryCollections.h */; };
-		B7569AB412F75D9400717C15 /* NSDictionaryCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7569AB212F75D9400717C15 /* NSDictionaryCollections.m */; };
+		B7569AB312F75D9400717C15 /* NSDictionary+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7569AB112F75D9400717C15 /* NSDictionary+Collections.h */; };
+		B7569AB412F75D9400717C15 /* NSDictionary+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7569AB212F75D9400717C15 /* NSDictionary+Collections.m */; };
 		B7FAD23515C075E100F9BA64 /* NSString+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7FAD23315C075E100F9BA64 /* NSString+Collections.h */; };
 		B7FAD23615C075E100F9BA64 /* NSString+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FAD23415C075E100F9BA64 /* NSString+Collections.m */; };
 /* End PBXBuildFile section */
@@ -32,14 +32,14 @@
 		B74896F112E63A4C009AF6D1 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Common.m; path = Source/Common.m; sourceTree = "<group>"; };
 		B74896F212E63A4C009AF6D1 /* MDPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDPair.h; path = Source/MDPair.h; sourceTree = "<group>"; };
 		B74896F312E63A4C009AF6D1 /* MDPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDPair.m; path = Source/MDPair.m; sourceTree = "<group>"; };
-		B74896F412E63A4C009AF6D1 /* NSArrayCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayCollections.h; path = Source/NSArrayCollections.h; sourceTree = "<group>"; };
-		B74896F512E63A4C009AF6D1 /* NSArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayCollections.m; path = Source/NSArrayCollections.m; sourceTree = "<group>"; };
-		B74896F612E63A4C009AF6D1 /* NSSetCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSSetCollections.h; path = Source/NSSetCollections.h; sourceTree = "<group>"; };
-		B74896F712E63A4C009AF6D1 /* NSSetCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSSetCollections.m; path = Source/NSSetCollections.m; sourceTree = "<group>"; };
+		B74896F412E63A4C009AF6D1 /* NSArray+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Collections.h"; path = "Source/NSArray+Collections.h"; sourceTree = "<group>"; };
+		B74896F512E63A4C009AF6D1 /* NSArray+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Collections.m"; path = "Source/NSArray+Collections.m"; sourceTree = "<group>"; };
+		B74896F612E63A4C009AF6D1 /* NSSet+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSSet+Collections.h"; path = "Source/NSSet+Collections.h"; sourceTree = "<group>"; };
+		B74896F712E63A4C009AF6D1 /* NSSet+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Collections.m"; path = "Source/NSSet+Collections.m"; sourceTree = "<group>"; };
 		B7569AA512F75D6E00717C15 /* CommonHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHelpers.h; path = Source/CommonHelpers.h; sourceTree = "<group>"; };
 		B7569AA612F75D6E00717C15 /* CommonHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonHelpers.m; path = Source/CommonHelpers.m; sourceTree = "<group>"; };
-		B7569AB112F75D9400717C15 /* NSDictionaryCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDictionaryCollections.h; path = Source/NSDictionaryCollections.h; sourceTree = "<group>"; };
-		B7569AB212F75D9400717C15 /* NSDictionaryCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDictionaryCollections.m; path = Source/NSDictionaryCollections.m; sourceTree = "<group>"; };
+		B7569AB112F75D9400717C15 /* NSDictionary+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Collections.h"; path = "Source/NSDictionary+Collections.h"; sourceTree = "<group>"; };
+		B7569AB212F75D9400717C15 /* NSDictionary+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Collections.m"; path = "Source/NSDictionary+Collections.m"; sourceTree = "<group>"; };
 		B7FAD23315C075E100F9BA64 /* NSString+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Collections.h"; path = "Source/NSString+Collections.h"; sourceTree = "<group>"; };
 		B7FAD23415C075E100F9BA64 /* NSString+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Collections.m"; path = "Source/NSString+Collections.m"; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libCollections.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCollections.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,12 +116,12 @@
 		B7BC514712EF86D700DD7603 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				B74896F412E63A4C009AF6D1 /* NSArrayCollections.h */,
-				B74896F512E63A4C009AF6D1 /* NSArrayCollections.m */,
-				B7569AB112F75D9400717C15 /* NSDictionaryCollections.h */,
-				B7569AB212F75D9400717C15 /* NSDictionaryCollections.m */,
-				B74896F612E63A4C009AF6D1 /* NSSetCollections.h */,
-				B74896F712E63A4C009AF6D1 /* NSSetCollections.m */,
+				B74896F412E63A4C009AF6D1 /* NSArray+Collections.h */,
+				B74896F512E63A4C009AF6D1 /* NSArray+Collections.m */,
+				B7569AB112F75D9400717C15 /* NSDictionary+Collections.h */,
+				B7569AB212F75D9400717C15 /* NSDictionary+Collections.m */,
+				B74896F612E63A4C009AF6D1 /* NSSet+Collections.h */,
+				B74896F712E63A4C009AF6D1 /* NSSet+Collections.m */,
 				B7FAD23315C075E100F9BA64 /* NSString+Collections.h */,
 				B7FAD23415C075E100F9BA64 /* NSString+Collections.m */,
 			);
@@ -147,11 +147,11 @@
 				AA747D9F0F9514B9006C5449 /* collections.pch in Headers */,
 				B74896F812E63A4C009AF6D1 /* Common.h in Headers */,
 				B74896FA12E63A4C009AF6D1 /* MDPair.h in Headers */,
-				B74896FC12E63A4C009AF6D1 /* NSArrayCollections.h in Headers */,
-				B74896FE12E63A4C009AF6D1 /* NSSetCollections.h in Headers */,
+				B74896FC12E63A4C009AF6D1 /* NSArray+Collections.h in Headers */,
+				B74896FE12E63A4C009AF6D1 /* NSSet+Collections.h in Headers */,
 				B7569AA712F75D6E00717C15 /* CommonHelpers.h in Headers */,
-				B7569AB312F75D9400717C15 /* NSDictionaryCollections.h in Headers */,
 				B7FAD23515C075E100F9BA64 /* NSString+Collections.h in Headers */,
+				B7569AB312F75D9400717C15 /* NSDictionary+Collections.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +210,11 @@
 			files = (
 				B74896F912E63A4C009AF6D1 /* Common.m in Sources */,
 				B74896FB12E63A4C009AF6D1 /* MDPair.m in Sources */,
-				B74896FD12E63A4C009AF6D1 /* NSArrayCollections.m in Sources */,
-				B74896FF12E63A4C009AF6D1 /* NSSetCollections.m in Sources */,
+				B74896FD12E63A4C009AF6D1 /* NSArray+Collections.m in Sources */,
+				B74896FF12E63A4C009AF6D1 /* NSSet+Collections.m in Sources */,
 				B7569AA812F75D6E00717C15 /* CommonHelpers.m in Sources */,
-				B7569AB412F75D9400717C15 /* NSDictionaryCollections.m in Sources */,
 				B7FAD23615C075E100F9BA64 /* NSString+Collections.m in Sources */,
+				B7569AB412F75D9400717C15 /* NSDictionary+Collections.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

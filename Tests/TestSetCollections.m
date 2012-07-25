@@ -1,6 +1,6 @@
 #import "TestSetCollections.h"
 #import "MDPair.h"
-#import "NSSetCollections.h"
+#import "NSSet+Collections.h"
 
 #include <ctype.h>
 

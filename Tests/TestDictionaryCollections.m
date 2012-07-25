@@ -1,5 +1,5 @@
 #import "TestDictionaryCollections.h"
-#import "NSDictionaryCollections.h"
+#import "NSDictionary+Collections.h"
 
 #include <ctype.h>
 

@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import "NSArrayCollections.h"
+#import "NSArray+Collections.h"
 #import "Common.h"
 #import "CommonHelpers.h"
 #import "MDPair.h"

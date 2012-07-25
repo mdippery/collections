@@ -1,6 +1,6 @@
 #import "TestArrayCollections.h"
 #import "MDPair.h"
-#import "NSArrayCollections.h"
+#import "NSArray+Collections.h"
 
 
 @implementation TestCollections

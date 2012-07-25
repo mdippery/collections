@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import "NSDictionaryCollections.h"
+#import "NSDictionary+Collections.h"
 #import "Common.h"
 
 

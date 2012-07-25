@@ -20,7 +20,7 @@
  * THE SOFTWARE.
  */
 
-#import "NSSetCollections.h"
+#import "NSSet+Collections.h"
 #import "Common.h"
 #import "MDPair.h"
 
