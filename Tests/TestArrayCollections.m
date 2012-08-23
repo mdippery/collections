@@ -233,7 +233,7 @@
     for (NSUInteger i = 0U; i < n; i++) {
         [target addObject:[allPositive objectAtIndex:i]];
     }
-    
+
     NSArray *f = [allPositive take:n];
     STAssertEquals([f count], [target count], @"Arrays are not the same size (is %u, should be %u)", [f count], [target count]);
     for (NSUInteger i = 0U; i < [f count]; i++) {
