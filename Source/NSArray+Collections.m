@@ -31,10 +31,8 @@
 - (NSArray *)do:(void (^)(id obj))block
 {
     if ([self respondsToSelector:@selector(enumerateObjectsUsingBlock:)]) {
-        NSLog(@"Using Snow Leopard's enumerateObjectsUsingBlock:");
         [self enumerateObjectsUsingBlock:^ (id obj, NSUInteger idx, BOOL *stop) { block(obj); }];
     } else {
-        NSLog(@"enumerateObjectsUsingBlock: does not exist");
         do_foreach(self, block);
     }
     return self;
