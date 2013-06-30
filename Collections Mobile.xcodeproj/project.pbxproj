@@ -158,9 +158,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D2AAC07D0554694100DB518D /* Collections (iOS) */ = {
+		D2AAC07D0554694100DB518D /* Collections */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Collections (iOS)" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Collections" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -170,7 +170,7 @@
 			);
 			dependencies = (
 			);
-			name = "Collections (iOS)";
+			name = Collections;
 			productName = "Collections (iOS)";
 			productReference = D2AAC07E0554694100DB518D /* libCollections.a */;
 			productType = "com.apple.product-type.library.static";
@@ -198,7 +198,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* Collections (iOS) */,
+				D2AAC07D0554694100DB518D /* Collections */,
 			);
 		};
 /* End PBXProject section */
@@ -288,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Collections (iOS)" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "Collections" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
