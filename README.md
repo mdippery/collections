@@ -29,5 +29,5 @@ from Smalltalk and Ruby, and miss them in Objective-C), but I was motivated
 to finally sit down and write the code by a [post][SO] on Stack Overflow.
 
 [Smalltalk]: http://www.ifi.uzh.ch/richter/Classes/oose2/01_Collections/03_smalltalk/03_smalltalk.html#2%20Collection%20Protocol
-[Ruby]: http://ruby-doc.org/core/classes/Enumerable.html
-[SO]: http://stackoverflow.com/q/4650820/28804
+[Ruby]:      http://ruby-doc.org/core/classes/Enumerable.html
+[SO]:        http://stackoverflow.com/q/4650820/28804
