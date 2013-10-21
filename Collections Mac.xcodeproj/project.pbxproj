@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32DBCF5E0370ADEE00C91783 /* collections.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collections.pch; path = Source/collections.pch; sourceTree = "<group>"; };
+		32DBCF5E0370ADEE00C91783 /* Collections.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Collections.pch; path = Source/Collections.pch; sourceTree = "<group>"; };
 		B749BEA712F7412A00298360 /* CommonHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHelpers.h; path = Source/CommonHelpers.h; sourceTree = "<group>"; };
 		B749BEA812F7412A00298360 /* CommonHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonHelpers.m; path = Source/CommonHelpers.m; sourceTree = "<group>"; };
 		B749BF1C12F747B900298360 /* NSDictionary+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Collections.h"; path = "Source/NSDictionary+Collections.h"; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF5E0370ADEE00C91783 /* collections.pch */,
+				32DBCF5E0370ADEE00C91783 /* Collections.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/collections.pch;
+				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
@@ -361,7 +361,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/collections.pch;
+				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = "@rpath";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;

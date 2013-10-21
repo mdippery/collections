@@ -231,7 +231,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/collections.pch;
+				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
 				PRIVATE_HEADERS_FOLDER_PATH = /include;
@@ -248,7 +248,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DSTROOT = "/tmp/Collections-iOS.dst";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Source/collections.pch;
+				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/lib;
 				PRIVATE_HEADERS_FOLDER_PATH = /include;
