@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,30 +26,30 @@
 
 @implementation NSDictionary (SmalltalkCollections)
 
-- (NSDictionary *)do:(void (^)(id obj))block
+- (NSDictionary *)do:(MDElementMutator)block
 {
     do_foreach(self, block);
     return self;
 }
 
-- (NSDictionary *)collect:(id (^)(id obj))block
+- (NSDictionary *)collect:(MDElementTransformer)block
 {
     NSMutableDictionary *d = [NSMutableDictionary dictionaryWithCapacity:[self count]];
     return collect_foreach(self, d, block);
 }
 
-- (id)inject:(id)initial into:(id (^)(id memo, id obj))block
+- (id)inject:(id)initial into:(MDElementInjector)block
 {
     return inject_foreach(self, initial, block);
 }
 
-- (NSDictionary *)reject:(BOOL (^)(id obj))block
+- (NSDictionary *)reject:(MDElementFilter)block
 {
     NSMutableDictionary *d = [NSMutableDictionary dictionaryWithCapacity:[self count]];
     return reject_foreach(self, d, block);
 }
 
-- (NSDictionary *)select:(BOOL (^)(id obj))block
+- (NSDictionary *)select:(MDElementFilter)block
 {
     NSMutableDictionary *d = [NSMutableDictionary dictionaryWithCapacity:[self count]];
     return select_foreach(self, d, block);
@@ -59,22 +59,22 @@
 
 @implementation NSDictionary (RubyEnumerable)
 
-- (BOOL)all:(BOOL (^)(id obj))block
+- (BOOL)all:(MDElementFilter)block
 {
     return all_foreach(self, block);
 }
 
-- (BOOL)any:(BOOL (^)(id obj))block
+- (BOOL)any:(MDElementFilter)block
 {
     return any_foreach(self, block);
 }
 
-- (BOOL)none:(BOOL (^)(id obj))block
+- (BOOL)none:(MDElementFilter)block
 {
     return none_foreach(self, block);
 }
 
-- (BOOL)one:(BOOL (^)(id obj))block
+- (BOOL)one:(MDElementFilter)block
 {
     return one_foreach(self, block);
 }
@@ -89,7 +89,7 @@
     return find_min(self, block);
 }
 
-- (MDPair *)partition:(BOOL (^)(id obj))block
+- (MDPair *)partition:(MDElementFilter)block
 {
     NSMutableDictionary *t = [NSMutableDictionary dictionaryWithCapacity:[self count] / 2];
     NSMutableDictionary *f = [NSMutableDictionary dictionaryWithCapacity:[self count] / 2];

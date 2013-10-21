@@ -24,6 +24,7 @@
 		B7A1C1F812E3FFE300CADC97 /* NSSet+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7A1C1F612E3FFE300CADC97 /* NSSet+Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7A1C1F912E3FFE300CADC97 /* NSSet+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C1F712E3FFE300CADC97 /* NSSet+Collections.m */; };
 		B7A1C2CD12E407ED00CADC97 /* TestSetCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */; };
+		B7ABE4A21815EAAD00862E71 /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7ABE4A11815EAA300862E71 /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7FAD22715C0729C00F9BA64 /* NSString+Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = B7FAD22515C0729C00F9BA64 /* NSString+Collections.h */; };
 		B7FAD22815C0729C00F9BA64 /* NSString+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = B7FAD22615C0729C00F9BA64 /* NSString+Collections.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		B7A1C1F712E3FFE300CADC97 /* NSSet+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Collections.m"; path = "Source/NSSet+Collections.m"; sourceTree = "<group>"; };
 		B7A1C2CB12E407ED00CADC97 /* TestSetCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestSetCollections.h; path = Tests/TestSetCollections.h; sourceTree = "<group>"; };
 		B7A1C2CC12E407ED00CADC97 /* TestSetCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestSetCollections.m; path = Tests/TestSetCollections.m; sourceTree = "<group>"; };
+		B7ABE4A11815EAA300862E71 /* Collections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Collections.h; path = Source/Collections.h; sourceTree = "<group>"; };
 		B7FAD22515C0729C00F9BA64 /* NSString+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Collections.h"; path = "Source/NSString+Collections.h"; sourceTree = "<group>"; };
 		B7FAD22615C0729C00F9BA64 /* NSString+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Collections.m"; path = "Source/NSString+Collections.m"; sourceTree = "<group>"; };
 		D2AAC0C705546C1D00DB518D /* libCollections.A.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libCollections.A.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,7 @@
 		08FB77AEFE84172EC02AAC07 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B7ABE4A11815EAA300862E71 /* Collections.h */,
 				B77EEBEE12E3907B00567D8C /* Common.h */,
 				B77EEBEF12E3907B00567D8C /* Common.m */,
 				B7BC512112EF845E00DD7603 /* Additions */,
@@ -191,6 +194,7 @@
 			files = (
 				B76C5D0A12DE0F250058DF08 /* NSArray+Collections.h in Headers */,
 				B77EEBF012E3907B00567D8C /* Common.h in Headers */,
+				B7ABE4A21815EAAD00862E71 /* Collections.h in Headers */,
 				B7A1C18B12E3FA0100CADC97 /* MDPair.h in Headers */,
 				B7A1C1F812E3FFE300CADC97 /* NSSet+Collections.h in Headers */,
 				B749BEA912F7412A00298360 /* CommonHelpers.h in Headers */,

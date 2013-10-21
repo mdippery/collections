@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2012-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,9 +21,11 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Collections.h"
+
 
 @interface NSString (RubyString)
-- (void)eachCharacter:(void (^)(unichar))block;
-- (void)eachLine:(void (^)(NSString *))block;
+- (void)eachCharacter:(MDCharacterMutator)block;
+- (void)eachLine:(MDStringMutator)block;
 - (NSArray *)lines;
 @end

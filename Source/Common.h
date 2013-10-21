@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,7 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Collections.h"
 
 @class MDPair;
 
@@ -31,17 +32,17 @@
 
 extern id do_comparison(id collection, NSComparator cmp, NSComparisonResult val);
 
-extern void do_foreach(id collection, void (^block)(id));
-extern id collect_foreach(id collection, id acc, id (^block)(id));
-extern id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void));
-extern id inject_foreach(id collection, id initial, id (^into)(id, id));
-extern id select_foreach(id collection, id acc, BOOL (^block)(id));
-extern id reject_foreach(id collection, id acc, BOOL (^block)(id));
+extern void do_foreach(id collection, MDElementMutator);
+extern id collect_foreach(id collection, id acc, MDElementTransformer);
+extern id detect_foreach(id collection, MDElementFilter, MDElementDefault);
+extern id inject_foreach(id collection, id initial, MDElementInjector);
+extern id select_foreach(id collection, id acc, MDElementFilter);
+extern id reject_foreach(id collection, id acc, MDElementFilter);
 
-extern BOOL all_foreach(id collection, BOOL (^block)(id));
-extern BOOL any_foreach(id collection, BOOL (^block)(id));
-extern BOOL none_foreach(id collection, BOOL (^block)(id));
-extern BOOL one_foreach(id collection, BOOL (^block)(id));
-extern id drop_foreach(id collection, id acc, BOOL (^drop)(id));
-extern MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id));
-extern id take_foreach(id collection, id acc, BOOL (^take)(id));
+extern BOOL all_foreach(id collection, MDElementFilter);
+extern BOOL any_foreach(id collection, MDElementFilter);
+extern BOOL none_foreach(id collection, MDElementFilter);
+extern BOOL one_foreach(id collection, MDElementFilter);
+extern id drop_foreach(id collection, id acc, MDElementFilter);
+extern MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, MDElementFilter);
+extern id take_foreach(id collection, id acc, MDElementFilter);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2012-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,14 @@
 
 @implementation NSString (RubyString)
 
-- (void)eachCharacter:(void (^)(unichar))block
+- (void)eachCharacter:(MDCharacterMutator)block
 {
     for (int i = 0; i < [self length]; i++) {
         block([self characterAtIndex:i]);
     }
 }
 
-- (void)eachLine:(void (^)(NSString *))block
+- (void)eachLine:(MDStringMutator)block
 {
     for (NSString *line in [self lines]) {
         block(line);

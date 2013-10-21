@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@
 #import "MDPair.h"
 #import "CommonHelpers.h"
 
-void do_foreach(id collection, void (^block)(id))
+void do_foreach(id collection, MDElementMutator block)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -32,7 +32,7 @@ void do_foreach(id collection, void (^block)(id))
     }
 }
 
-id collect_foreach(id collection, id acc, id (^block)(id))
+id collect_foreach(id collection, id acc, MDElementTransformer block)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -41,7 +41,7 @@ id collect_foreach(id collection, id acc, id (^block)(id))
     return [acc freeze];
 }
 
-id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void))
+id detect_foreach(id collection, MDElementFilter detect, MDElementDefault none)
 {
     for (id item in collection) {
         if (detect(item)) return item;
@@ -49,7 +49,7 @@ id detect_foreach(id collection, BOOL (^detect)(id), id (^none)(void))
     return none();
 }
 
-id inject_foreach(id collection, id initial, id (^into)(id, id))
+id inject_foreach(id collection, id initial, MDElementInjector into)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -58,7 +58,7 @@ id inject_foreach(id collection, id initial, id (^into)(id, id))
     return initial;
 }
 
-id select_foreach(id collection, id acc, BOOL (^block)(id))
+id select_foreach(id collection, id acc, MDElementFilter block)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -69,7 +69,7 @@ id select_foreach(id collection, id acc, BOOL (^block)(id))
     return [acc freeze];
 }
 
-id reject_foreach(id collection, id acc, BOOL (^block)(id))
+id reject_foreach(id collection, id acc, MDElementFilter block)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -95,7 +95,7 @@ id do_comparison(id collection, NSComparator cmp, NSComparisonResult val)
     return result;
 }
 
-BOOL all_foreach(id collection, BOOL (^block)(id))
+BOOL all_foreach(id collection, MDElementFilter block)
 {
     for (id item in collection) {
         if (!block(item)) return NO;
@@ -103,7 +103,7 @@ BOOL all_foreach(id collection, BOOL (^block)(id))
     return YES;
 }
 
-BOOL any_foreach(id collection, BOOL (^block)(id))
+BOOL any_foreach(id collection, MDElementFilter block)
 {
     for (id item in collection) {
         if (block(item)) return YES;
@@ -119,7 +119,7 @@ BOOL none_foreach(id collection, BOOL (^block)(id))
     return YES;
 }
 
-BOOL one_foreach(id collection, BOOL (^block)(id))
+BOOL one_foreach(id collection, MDElementFilter block)
 {
     BOOL sawOne = NO;
     for (id item in collection) {
@@ -131,7 +131,7 @@ BOOL one_foreach(id collection, BOOL (^block)(id))
     return sawOne;
 }
 
-id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
+id drop_foreach(id collection, id acc, MDElementFilter drop)
 {
     BOOL dropFailed = NO;
     for (id val in collection) {
@@ -148,7 +148,7 @@ id drop_foreach(id collection, id acc, BOOL (^drop)(id obj))
     return [acc freeze];
 }
 
-MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(id))
+MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, MDElementFilter block)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];
@@ -158,7 +158,7 @@ MDPair *partition_foreach(id collection, id trueAcc, id falseAcc, BOOL (^block)(
     return [MDPair pairWithFirstObject:[trueAcc freeze] secondObject:[falseAcc freeze]];
 }
 
-id take_foreach(id collection, id acc, BOOL (^take)(id))
+id take_foreach(id collection, id acc, MDElementFilter take)
 {
     for (id val in collection) {
         id item = [collection objectForValue:val];

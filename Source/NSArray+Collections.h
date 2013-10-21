@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,30 +21,31 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "Collections.h"
 
 @class MDPair;
 
 
 @interface NSArray (SmalltalkCollections)
-- (NSArray *)do:(void (^)(id obj))block;
-- (NSArray *)collect:(id (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block;
-- (id)detect:(BOOL (^)(id obj))block ifNone:(id (^)(void))none;
-- (id)inject:(id)initial into:(id (^)(id memo, id obj))block;
-- (NSArray *)reject:(BOOL (^)(id obj))block;
-- (NSArray *)select:(BOOL (^)(id obj))block;
+- (NSArray *)do:(MDElementMutator)block;
+- (NSArray *)collect:(MDElementTransformer)block;
+- (id)detect:(MDElementFilter)block;
+- (id)detect:(MDElementFilter)block ifNone:(MDElementDefault)none;
+- (id)inject:(id)initial into:(MDElementInjector)block;
+- (NSArray *)reject:(MDElementFilter)block;
+- (NSArray *)select:(MDElementFilter)block;
 @end
 
 @interface NSArray (RubyEnumerable)
-- (BOOL)all:(BOOL (^)(id obj))block;
-- (BOOL)any:(BOOL (^)(id obj))block;
-- (BOOL)none:(BOOL (^)(id obj))block;
-- (BOOL)one:(BOOL (^)(id obj))block;
+- (BOOL)all:(MDElementFilter)block;
+- (BOOL)any:(MDElementFilter)block;
+- (BOOL)none:(MDElementFilter)block;
+- (BOOL)one:(MDElementFilter)block;
 - (NSArray *)drop:(NSUInteger)n;
-- (NSArray *)dropWhile:(BOOL (^)(id obj))block;
+- (NSArray *)dropWhile:(MDElementFilter)block;
 - (id)max:(NSComparator)block;
 - (id)min:(NSComparator)block;
-- (MDPair *)partition:(BOOL (^)(id obj))block;
+- (MDPair *)partition:(MDElementFilter)block;
 - (NSArray *)take:(NSUInteger)n;
-- (NSArray *)takeWhile:(BOOL (^)(id obj))block;
+- (NSArray *)takeWhile:(MDElementFilter)block;
 @end

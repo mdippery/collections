@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,30 +27,30 @@
 
 @implementation NSSet (SmalltalkCollections)
 
-- (NSSet *)do:(void (^)(id obj))block
+- (NSSet *)do:(MDElementMutator)block
 {
     do_foreach(self, block);
     return self;
 }
 
-- (NSSet *)collect:(id (^)(id obj))block
+- (NSSet *)collect:(MDElementTransformer)block
 {
     NSMutableSet *s = [NSMutableSet setWithCapacity:[self count]];
     return collect_foreach(self, s, block);
 }
 
-- (id)inject:(id)initial into:(id (^)(id memo, id obj))block
+- (id)inject:(id)initial into:(MDElementInjector)block
 {
     return inject_foreach(self, initial, block);
 }
 
-- (NSSet *)reject:(BOOL (^)(id obj))block
+- (NSSet *)reject:(MDElementFilter)block
 {
     NSMutableSet *s = [NSMutableSet setWithCapacity:[self count]];
     return reject_foreach(self, s, block);
 }
 
-- (NSSet *)select:(BOOL (^)(id obj))block
+- (NSSet *)select:(MDElementFilter)block
 {
     NSMutableSet *s = [NSMutableSet setWithCapacity:[self count]];
     return select_foreach(self, s, block);
@@ -60,22 +60,22 @@
 
 @implementation NSSet (RubyEnumerable)
 
-- (BOOL)all:(BOOL (^)(id obj))block
+- (BOOL)all:(MDElementFilter)block
 {
     return all_foreach(self, block);
 }
 
-- (BOOL)any:(BOOL (^)(id obj))block
+- (BOOL)any:(MDElementFilter)block
 {
     return any_foreach(self, block);
 }
 
-- (BOOL)none:(BOOL (^)(id obj))block
+- (BOOL)none:(MDElementFilter)block
 {
     return none_foreach(self, block);
 }
 
-- (BOOL)one:(BOOL (^)(id obj))block
+- (BOOL)one:(MDElementFilter)block
 {
     return one_foreach(self, block);
 }
@@ -90,7 +90,7 @@
     return find_min(self, block);
 }
 
-- (MDPair *)partition:(BOOL (^)(id obj))block
+- (MDPair *)partition:(MDElementFilter)block
 {
     NSMutableSet *t = [NSMutableSet setWithCapacity:[self count]/2];
     NSMutableSet *f = [NSMutableSet setWithCapacity:[self count]/2];

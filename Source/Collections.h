@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2011-2013 Michael Dippery <michael@monkey-robot.com>
+ * Copyright (C) 2013 Michael Dippery <michael@monkey-robot.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,26 +20,14 @@
  * THE SOFTWARE.
  */
 
-#import <Foundation/Foundation.h>
-#import "Collections.h"
-
-@class MDPair;
+@class NSString;
 
 
-@interface NSDictionary (SmalltalkCollections)
-- (NSDictionary *)do:(MDElementMutator)block;
-- (NSDictionary *)collect:(MDElementTransformer)block;
-- (id)inject:(id)initial into:(MDElementInjector)block;
-- (NSDictionary *)reject:(MDElementFilter)block;
-- (NSDictionary *)select:(MDElementFilter)block;
-@end
+typedef id (^MDElementDefault)(void);
+typedef BOOL (^MDElementFilter)(id);
+typedef id (^MDElementInjector)(id, id);
+typedef void (^MDElementMutator)(id);
+typedef id (^MDElementTransformer)(id);
 
-@interface NSDictionary (RubyEnumerable)
-- (BOOL)all:(MDElementFilter)block;
-- (BOOL)any:(MDElementFilter)block;
-- (BOOL)none:(MDElementFilter)block;
-- (BOOL)one:(MDElementFilter)block;
-- (id)max:(NSComparator)block;
-- (id)min:(NSComparator)block;
-- (MDPair *)partition:(MDElementFilter)block;
-@end
+typedef void (^MDCharacterMutator)(unichar);
+typedef void (^MDStringMutator)(NSString *);
