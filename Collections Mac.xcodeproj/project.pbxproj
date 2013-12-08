@@ -347,11 +347,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "@rpath";
+				LD_DYLIB_INSTALL_NAME = "@rpath/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = "Collections.${FRAMEWORK_VERSION}";
-				PUBLIC_HEADERS_FOLDER_PATH = /include;
 			};
 			name = Debug;
 		};
@@ -367,11 +365,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "@rpath";
+				LD_DYLIB_INSTALL_NAME = "@rpath/$(EXECUTABLE_PATH)";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = "Collections.${FRAMEWORK_VERSION}";
-				PUBLIC_HEADERS_FOLDER_PATH = /include;
 			};
 			name = Release;
 		};
