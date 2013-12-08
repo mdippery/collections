@@ -227,16 +227,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DSTROOT = "/tmp/Collections-iOS.dst";
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Collections.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = /usr/local/lib;
-				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = Collections;
-				PUBLIC_HEADERS_FOLDER_PATH = /include;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -246,14 +240,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DSTROOT = "/tmp/Collections-iOS.dst";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Collections.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = /usr/local/lib;
-				PRIVATE_HEADERS_FOLDER_PATH = /include;
 				PRODUCT_NAME = Collections;
-				PUBLIC_HEADERS_FOLDER_PATH = /include;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
