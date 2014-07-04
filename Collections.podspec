@@ -8,6 +8,10 @@ Pod::Spec.new do |s|
                    Enumerable mixin to Objective-C. It adds these methods
                    as categories to the Foundation framework's collections
                    and string classes.
+
+                   In a nutshell, libCollections seeks to add some a
+                   functional programming flair to the standard collections
+                   and string classes on OS X and iOS.
                    DESC
   s.homepage     = "https://github.com/mdippery/collections"
   s.license      = { :type => "MIT", :file => "LICENSE" }
