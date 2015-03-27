@@ -34,7 +34,7 @@
         }
         i++;
     }];
-    STAssertTrue([places isEqualToString:target], @"String should be '%@', is '%@'", target, places);
+    XCTAssertTrue([places isEqualToString:target], @"String should be '%@', is '%@'", target, places);
 }
 
 - (void)testCollect
@@ -43,7 +43,7 @@
     for (NSString *key in d) {
         NSString *code = [d objectForKey:key];
         for (NSUInteger i = 0U; i < [code length]; i++) {
-            STAssertTrue(isupper([code characterAtIndex:i]), @"'%@' does not consist entirely of uppercase letters", code);
+            XCTAssertTrue(isupper([code characterAtIndex:i]), @"'%@' does not consist entirely of uppercase letters", code);
         }
     }
 }
@@ -58,17 +58,17 @@
         first = NO;
         return memo;
     }];
-    STAssertEquals([sout length], (NSUInteger) 27U, @"Output is '%@'", sout);
+    XCTAssertEqual([sout length], (NSUInteger) 27U, @"Output is '%@'", sout);
 }
 
 - (void)testReject
 {
     NSSet *targets = [NSSet setWithObjects:@"ants", @"anything", nil];
     NSDictionary *d = [eats reject:^ BOOL (id obj) { return ![obj hasPrefix:@"a"]; }];
-    STAssertEquals([d count], [targets count], @"Dictionary should have %u elements, has %u", [targets count], [d count]);
+    XCTAssertEqual([d count], [targets count], @"Dictionary should have %lu elements, has %lu", (unsigned long)[targets count], (unsigned long)[d count]);
     for (NSString *key in d) {
         NSString *food = [d objectForKey:key];
-        STAssertTrue([targets containsObject:food], @"target should contain the object %@", food);
+        XCTAssertTrue([targets containsObject:food], @"target should contain the object %@", food);
     }
 }
 
@@ -76,10 +76,10 @@
 {
     NSSet *targets = [NSSet setWithObjects:@"ants", @"anything", nil];
     NSDictionary *d = [eats select:^ BOOL (id obj) { return [obj hasPrefix:@"a"]; }];
-    STAssertEquals([d count], [targets count], @"Dictionary should have %u elements, has %u", [targets count], [d count]);
+    XCTAssertEqual([d count], [targets count], @"Dictionary should have %lu elements, has %lu", (unsigned long)[targets count], (unsigned long)[d count]);
     for (NSString *key in d) {
         NSString *food = [d objectForKey:key];
-        STAssertTrue([targets containsObject:food], @"target should contain the object %@", food);
+        XCTAssertTrue([targets containsObject:food], @"target should contain the object %@", food);
     }
 }
 

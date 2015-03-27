@@ -1,7 +1,7 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface TestDictionaryCollections : SenTestCase
+@interface TestDictionaryCollections : XCTestCase
 {
     NSDictionary *postalCodes;
     NSDictionary *eats;

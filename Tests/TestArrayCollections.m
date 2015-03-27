@@ -26,9 +26,9 @@
     __block BOOL ranSecondBlock = NO;
     NSArray *a = [NSArray arrayWithObjects:@"one", @"two", @"buckle", @"my", @"shoe", nil];
     NSArray *ret = [[a do:^ (id obj) { ranFirstBlock = YES; }] do:^ (id obj) { ranSecondBlock = YES; }];
-    STAssertEquals(a, ret, @"'a' and 'ret' are not the same object");
-    STAssertTrue(ranFirstBlock, @"Did not run first code block");
-    STAssertTrue(ranSecondBlock, @"Did not run second code block");
+    XCTAssertEqual(a, ret, @"'a' and 'ret' are not the same object");
+    XCTAssertTrue(ranFirstBlock, @"Did not run first code block");
+    XCTAssertTrue(ranSecondBlock, @"Did not run second code block");
 }
 
 - (void)testCollect
@@ -42,11 +42,11 @@
     NSArray *collected = [a collect:^ id (id obj) {
         return [NSNumber numberWithInteger:[obj integerValue]+1];
     }];
-    STAssertEquals([[collected objectAtIndex:0] integerValue], (NSInteger) 2, @"1 was not incremented");
-    STAssertEquals([[collected objectAtIndex:1] integerValue], (NSInteger) 3, @"2 was not incremented");
-    STAssertEquals([[collected objectAtIndex:2] integerValue], (NSInteger) 4, @"3 was not incremented");
-    STAssertEquals([[collected objectAtIndex:3] integerValue], (NSInteger) 5, @"4 was not incremented");
-    STAssertEquals([[collected objectAtIndex:4] integerValue], (NSInteger) 6, @"5 was not incremented");
+    XCTAssertEqual([[collected objectAtIndex:0] integerValue], (NSInteger) 2, @"1 was not incremented");
+    XCTAssertEqual([[collected objectAtIndex:1] integerValue], (NSInteger) 3, @"2 was not incremented");
+    XCTAssertEqual([[collected objectAtIndex:2] integerValue], (NSInteger) 4, @"3 was not incremented");
+    XCTAssertEqual([[collected objectAtIndex:3] integerValue], (NSInteger) 5, @"4 was not incremented");
+    XCTAssertEqual([[collected objectAtIndex:4] integerValue], (NSInteger) 6, @"5 was not incremented");
 }
 
 - (void)testDetect
@@ -59,12 +59,12 @@
     id detected = [a detect:^ BOOL (id obj) {
         return [obj integerValue] > 0;
     }];
-    STAssertEquals([two integerValue], (NSInteger) 2, @"Found value was not 2");
-    STAssertEqualObjects(two, detected, @"Found object is not the same as the one put into the array");
+    XCTAssertEqual([two integerValue], (NSInteger) 2, @"Found value was not 2");
+    XCTAssertEqualObjects(two, detected, @"Found object is not the same as the one put into the array");
 
     id failed = [a detect:^ BOOL (id obj) { return [obj integerValue] >= 10; } ifNone:^ id (void) { return [NSNumber numberWithInteger:100]; }];
-    STAssertEquals([failed integerValue], (NSInteger) 100, @"Failed value is not 100");
-    STAssertFalse([a containsObject:failed], @"array contains the failed object, but did not find it");
+    XCTAssertEqual([failed integerValue], (NSInteger) 100, @"Failed value is not 100");
+    XCTAssertFalse([a containsObject:failed], @"array contains the failed object, but did not find it");
 }
 
 - (void)testInject
@@ -77,7 +77,7 @@
         NSInteger sum = [memo integerValue] + [obj integerValue];
         return [NSNumber numberWithInteger:sum];
     }];
-    STAssertEquals([sum integerValue], (NSInteger) 6, @"sum of 1+2+3 should be 6");
+    XCTAssertEqual([sum integerValue], (NSInteger) 6, @"sum of 1+2+3 should be 6");
 }
 
 - (void)testReject
@@ -87,7 +87,7 @@
     NSArray *returned = [a reject:^ BOOL (id obj) {
         return [obj rangeOfString:@"fix"].location == [obj length]-[@"fix" length];
     }];
-    STAssertTrue([returned isEqualToArray:target], @"'reject:' did not return strings without the suffix 'fix'");
+    XCTAssertTrue([returned isEqualToArray:target], @"'reject:' did not return strings without the suffix 'fix'");
 }
 
 - (void)testSelect
@@ -97,31 +97,31 @@
     NSArray *returned = [a select:^ BOOL (id obj) {
         return [obj rangeOfString:@"fix"].location == [obj length] - [@"fix" length];
     }];
-    STAssertTrue([returned isEqualToArray:target], @"'select:' did not return strings with the suffix 'fix'");
+    XCTAssertTrue([returned isEqualToArray:target], @"'select:' did not return strings with the suffix 'fix'");
 }
 
 - (void)testAll
 {
     BOOL (^test)(id obj) = ^ BOOL (id obj) { return [obj integerValue] > 0; };
-    STAssertTrue([allPositive all:test], @"All of the values should be > 0");
-    STAssertFalse([allNegative all:test], @"Some values should be <= 0");
-    STAssertFalse([mixed all:test], @"Some values should be <= 0");
+    XCTAssertTrue([allPositive all:test], @"All of the values should be > 0");
+    XCTAssertFalse([allNegative all:test], @"Some values should be <= 0");
+    XCTAssertFalse([mixed all:test], @"Some values should be <= 0");
 }
 
 - (void)testAny
 {
     BOOL (^test)(id obj) = ^ BOOL (id obj) { return [obj integerValue] > 0; };
-    STAssertTrue([allPositive any:test], @"At least one value shoud be > 0");
-    STAssertFalse([allNegative any:test], @"No values should be > 0");
-    STAssertTrue([mixed any:test], @"At least one value should be > 0");
+    XCTAssertTrue([allPositive any:test], @"At least one value shoud be > 0");
+    XCTAssertFalse([allNegative any:test], @"No values should be > 0");
+    XCTAssertTrue([mixed any:test], @"At least one value should be > 0");
 }
 
 - (void)testNone
 {
     BOOL (^test)(id obj) = ^ BOOL (id obj) { return [obj integerValue] > 0; };
-    STAssertFalse([allPositive none:test], @"At least one value should be > 0");
-    STAssertTrue([allNegative none:test], @"No values should be > 0");
-    STAssertFalse([mixed none:test], @"Some values should be > 0");
+    XCTAssertFalse([allPositive none:test], @"At least one value should be > 0");
+    XCTAssertTrue([allNegative none:test], @"No values should be > 0");
+    XCTAssertFalse([mixed none:test], @"Some values should be > 0");
 }
 
 - (void)testOne
@@ -133,10 +133,10 @@
     }
 
     BOOL (^test)(id obj) = ^ BOOL (id obj) { return [obj integerValue] > 0; };
-    STAssertFalse([allPositive one:test], @"Only one value should be > 0");
-    STAssertFalse([allNegative one:test], @"Only one value should be > 0");
-    STAssertFalse([mixed one:test], @"Only one value should be > 0");
-    STAssertTrue([justOne one:test], @"Only one is > 0");
+    XCTAssertFalse([allPositive one:test], @"Only one value should be > 0");
+    XCTAssertFalse([allNegative one:test], @"Only one value should be > 0");
+    XCTAssertFalse([mixed one:test], @"Only one value should be > 0");
+    XCTAssertTrue([justOne one:test], @"Only one is > 0");
 }
 
 - (void)testDrop
@@ -147,9 +147,9 @@
         [cmp addObject:[allPositive objectAtIndex:i]];
     }
     NSArray *dropped = [allPositive drop:n];
-    STAssertEquals([dropped count], [allPositive count]-n, @"Did not drop %d elements", n);
-    STAssertEquals([dropped count], [cmp count], @"Did not drop %d elements", n);
-    STAssertTrue([dropped isEqualToArray:cmp], @"Arrays are not equal");
+    XCTAssertEqual([dropped count], [allPositive count]-n, @"Did not drop %ld elements", (long)n);
+    XCTAssertEqual([dropped count], [cmp count], @"Did not drop %ld elements", (long)n);
+    XCTAssertTrue([dropped isEqualToArray:cmp], @"Arrays are not equal");
 }
 
 - (void)testDropWhile
@@ -167,11 +167,11 @@
     [target addObject:[NSNumber numberWithUnsignedInteger:0U]];
 
     NSArray *dropped = [a dropWhile:^ BOOL (id obj) { return [obj integerValue] < 3; }];
-    STAssertEquals([dropped count], [target count], @"Arrays are not the same size (is %u, should be %u)", [dropped count], [target count]);
+    XCTAssertEqual([dropped count], [target count], @"Arrays are not the same size (is %lu, should be %lu)", (unsigned long)[dropped count], (unsigned long)[target count]);
     for (NSUInteger i = 0U; i < [dropped count]; i++) {
         NSInteger this = [[dropped objectAtIndex:i] integerValue];
         NSInteger that = [[target objectAtIndex:i] integerValue];
-        STAssertEquals(this, that, @"Integers are not the same value (is %d, should be %d)", this, that);
+        XCTAssertEqual(this, that, @"Integers are not the same value (is %ld, should be %ld)", (unsigned long)this, (unsigned long)that);
     }
 }
 
@@ -180,10 +180,10 @@
     NSComparisonResult (^cmp)(id, id) = ^ NSComparisonResult (id left, id right) { return [left compare:right]; };
     NSArray *a = [NSArray arrayWithObjects:@"foo", @"bar", @"max", @"baz", nil];
     id max = [a max:cmp];
-    STAssertEqualObjects(max, @"max", @"maximum value was not 'max' (was '%@')", max);
+    XCTAssertEqualObjects(max, @"max", @"maximum value was not 'max' (was '%@')", max);
     NSArray *empty = [NSArray array];
     id emptyMax = [empty max:cmp];
-    STAssertEqualObjects(emptyMax, nil, @"Empty arrays should return 'nil' for max");
+    XCTAssertEqualObjects(emptyMax, nil, @"Empty arrays should return 'nil' for max");
 }
 
 - (void)testMin
@@ -191,10 +191,10 @@
     NSComparisonResult (^cmp)(id, id) = ^ NSComparisonResult (id left, id right) { return [left compare:right]; };
     NSArray *a = [NSArray arrayWithObjects:@"foo", @"bar", @"max", @"baz", @"something else", nil];
     id min = [a min:cmp];
-    STAssertEqualObjects(min, @"bar", @"minimum value was not 'bar' (was '%@')", min);
+    XCTAssertEqualObjects(min, @"bar", @"minimum value was not 'bar' (was '%@')", min);
     NSArray *empty = [NSArray array];
     id emptyMin = [empty min:cmp];
-    STAssertEqualObjects(emptyMin, nil, @"Empty arrays should return 'nil' for min");
+    XCTAssertEqualObjects(emptyMin, nil, @"Empty arrays should return 'nil' for min");
 }
 
 - (void)testPartition
@@ -212,17 +212,17 @@
     MDPair *partition = [allPositive partition:^ BOOL (id obj) { return [obj integerValue] % 2 == 0; }];
     NSArray *retEvens = [partition firstObject];
     NSArray *retOdds = [partition secondObject];
-    STAssertEquals([retEvens count], [evens count], @"returned evens is not same size as evens");
-    STAssertEquals([retOdds count], [odds count], @"returned odds is not same size as odds");
+    XCTAssertEqual([retEvens count], [evens count], @"returned evens is not same size as evens");
+    XCTAssertEqual([retOdds count], [odds count], @"returned odds is not same size as odds");
     for (NSUInteger i = 0U; i < [retEvens count]; i++) {
         NSInteger this = [[retEvens objectAtIndex:i] integerValue];
         NSInteger that = [[evens objectAtIndex:i] integerValue];
-        STAssertEquals(this, that, @"Integers are not equal (is %d, should be %d)", this, that);
+        XCTAssertEqual(this, that, @"Integers are not equal (is %ld, should be %ld)", (long)this, (long)that);
     }
     for (NSUInteger i = 0U; i < [retOdds count]; i++) {
         NSInteger this = [[retOdds objectAtIndex:i] integerValue];
         NSInteger that = [[odds objectAtIndex:i] integerValue];
-        STAssertEquals(this, that, @"Integers are not equal (is %d, should be %d)", this, that);
+        XCTAssertEqual(this, that, @"Integers are not equal (is %ld, should be %ld)", (long)this, (long)that);
     }
 }
 
@@ -235,11 +235,11 @@
     }
     
     NSArray *f = [allPositive take:n];
-    STAssertEquals([f count], [target count], @"Arrays are not the same size (is %u, should be %u)", [f count], [target count]);
+    XCTAssertEqual([f count], [target count], @"Arrays are not the same size (is %lu, should be %lu)", (long)[f count], (long)[target count]);
     for (NSUInteger i = 0U; i < [f count]; i++) {
         NSInteger this = [[f objectAtIndex:i] integerValue];
         NSInteger that = [[target objectAtIndex:i] integerValue];
-        STAssertEquals(this, that, @"Integers are not the same value (is %d, should be %d)", this, that);
+        XCTAssertEqual(this, that, @"Integers are not the same value (is %ld, should be %ld)", (long)this, (long)that);
     }
 }
 
@@ -248,7 +248,7 @@
     NSArray *a = [NSArray arrayWithObjects:@"red", @"orange", @"yellow", @"green", @"stop", @"blue", @"indigo", @"violet", nil];
     NSArray *target = [NSArray arrayWithObjects:@"red", @"orange", @"yellow", @"green", nil];
     NSArray *taken = [a takeWhile:^ BOOL (id obj) { return ![obj isEqualToString:@"stop"]; }];
-    STAssertTrue([taken isEqualToArray:target], @"Arrays do not have the same elements");
+    XCTAssertTrue([taken isEqualToArray:target], @"Arrays do not have the same elements");
 }
 
 - (void)tearDown

@@ -1,7 +1,7 @@
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
-@interface TestCollections : SenTestCase
+@interface TestCollections : XCTestCase
 {
     NSMutableArray *allPositive;
     NSMutableArray *allNegative;

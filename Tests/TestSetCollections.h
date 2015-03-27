@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
 typedef BOOL (^BoolTestBlock)(id);
 
-@interface TestSetCollections : SenTestCase
+@interface TestSetCollections : XCTestCase
 {
     NSSet *animalSet;
     NSSet *setA;
