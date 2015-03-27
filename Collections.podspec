@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Collections"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Bringing Smalltalk and Ruby collections methods to Objective-C since 2011"
   s.description  = <<-DESC
                    **libCollections** is an Objective-C library that brings
