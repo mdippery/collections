@@ -50,7 +50,7 @@
 		B76C5CED12DE0BFA0058DF08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B76C5D0812DE0F250058DF08 /* NSArray+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Collections.h"; path = "Source/NSArray+Collections.h"; sourceTree = "<group>"; };
 		B76C5D0912DE0F250058DF08 /* NSArray+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Collections.m"; path = "Source/NSArray+Collections.m"; sourceTree = "<group>"; };
-		B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B76C5D6A12DE1E1B0058DF08 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76C5D6B12DE1E1B0058DF08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		B76C5DA812DE1F6C0058DF08 /* TestArrayCollections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestArrayCollections.h; path = Tests/TestArrayCollections.h; sourceTree = "<group>"; };
 		B76C5DA912DE1F6C0058DF08 /* TestArrayCollections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestArrayCollections.m; path = Tests/TestArrayCollections.m; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC0C705546C1D00DB518D /* libCollections.A.dylib */,
-				B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */,
+				B76C5D6A12DE1E1B0058DF08 /* Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 			);
 			name = "Unit Tests";
 			productName = "Unit Tests";
-			productReference = B76C5D6A12DE1E1B0058DF08 /* Unit Tests.octest */;
+			productReference = B76C5D6A12DE1E1B0058DF08 /* Unit Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D2AAC0C605546C1D00DB518D /* Collections */ = {
@@ -348,7 +348,7 @@
 				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LD_DYLIB_INSTALL_NAME = "@rpath/$(EXECUTABLE_PATH)";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Collections.${FRAMEWORK_VERSION}";
 			};
 			name = Debug;
@@ -366,7 +366,7 @@
 				GCC_PREFIX_HEADER = Source/Collections.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				LD_DYLIB_INSTALL_NAME = "@rpath/$(EXECUTABLE_PATH)";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "Collections.${FRAMEWORK_VERSION}";
 			};
 			name = Release;

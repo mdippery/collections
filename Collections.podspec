@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.ios.deployment_target = "5.1"
-  s.osx.deployment_target = "10.5"
+  s.osx.deployment_target = "10.6"
 end
