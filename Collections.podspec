@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Collections"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Bringing Smalltalk and Ruby collections methods to Objective-C since 2011"
   s.description  = <<-DESC
                    **libCollections** is an Objective-C library that brings
@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.ios.deployment_target = "5.1"
-  s.osx.deployment_target = "10.6"
+  s.osx.deployment_target = "10.7"
 end
